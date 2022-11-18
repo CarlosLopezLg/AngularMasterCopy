@@ -1,0 +1,13 @@
+<mat-drawer-container autosize>
+  <mat-drawer #drawer mode="push">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <app-toolbar></app-toolbar>
+    <div class="content-wrap">
+      <router-outlet></router-outlet>
+    </div>
+    <h3>Footer aquí</h3>
+  </mat-drawer-content>
+</mat-drawer-container>

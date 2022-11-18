@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { min-height: calc(100vh - 70px); }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+    --color-red-1: #670f22;
+    --color-red-2: #6a041a;
+    --color-red-3: #9a0526;
+    --color-red-4: #ab0d2f;
+    --color-red-5: #cd0c36;
+}
+
+.color-red-1 {
+    background-color: var(--color-red-1);
+    color: white;
+}
+
+.color-red-2 {
+    background-color: var(--color-red-2);
+    color: white;
+}
+
+.color-red-3 {
+    background-color: var(--color-red-3);
+    color: white;
+}
+
+.color-red-4 {
+    background-color: var(--color-red-4);
+    color: white;
+}
+
+.color-red-5 {
+    background-color: var(--color-red-5);
+    color: white;
+}

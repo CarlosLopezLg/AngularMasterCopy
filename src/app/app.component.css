@@ -1,0 +1,17 @@
+@import '../styles.css';
+
+mat-drawer-container {
+    height: 100%;
+    min-height: 100vh;
+}
+
+mat-drawer {
+    width: 260px;
+    border: none;
+}
+
+.content-wrap {
+    padding: 20px;
+    height: calc(100vh - 128px);
+    overflow: auto;
+}
