@@ -1,0 +1,6 @@
+.footer-container{
+    background-color: var(--color-red-2);
+    height:250px;
+    width: 100%;
+    color: white
+}

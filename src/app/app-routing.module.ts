@@ -13,10 +13,14 @@ const routes: Routes = [
     path: "home", 
     component: HomeComponent
   },
+  { 
+    path: 'generales', 
+    loadChildren: () => import('./modules/general/commands/commands.module').then(m => m.CommandsModule) 
+  },
   {
     path: "**", 
     component: PageNotFoundComponent
-  },
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,50 @@
+<h1>Comandos principales de Angular</h1>
+<p> A continuación se presentarán los principales comandos utilizados al momento de empezar a desarrollar un proyecto en Angular.</p>
+
+<h2> Instalar CLI de Angular</h2>
+<app-shell-layout> npm install -g @angular/cli</app-shell-layout>
+
+<h2> Crear un proyecto nuevo</h2>
+<app-shell-layout> ng new my-first-project</app-shell-layout>
+<p> En donde "my-first-project" será el lugar en donde se insertará el <b>nombre del proyecto</b>.</p>
+
+<h2> Correr el proyecto en el navegador</h2>
+<app-shell-layout> ng serve </app-shell-layout>
+<h3> Banderas: </h3>
+<p> <b>-o</b>: Abrir el navegador automáticamente</p>
+
+<h2> Compilar proyecto</h2>
+<app-shell-layout> ng build --prod</app-shell-layout>
+<p> Con este comando, preparas los archivos para subir a producción la aplicación. También pasarán de Typescript a Javascript los archivos.</p>
+
+<h2>Crear componentes</h2>
+<app-shell-layout> 
+  <span class="shell-note"> //Comando completo</span> <br>
+  ng generate component component-name<br>
+  <span class="shell-note"> //Método abreviado</span> <br>
+  ng g c component-name
+</app-shell-layout>
+<h3> Banderas: </h3>
+<p> <b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
+<p> <b>--module</b>: Selecciona el módulo a declarar el componente.</p>
+
+<h2> Crear servicio</h2>
+<app-shell-layout> ng generate service service-name</app-shell-layout>
+
+<h2> Crear módulo</h2>
+<app-shell-layout> ng generate module module-name</app-shell-layout>
+<h3> Banderas: </h3>
+<p> <b>--routing</b>: Crea archivo de enrutamiento</p>
+
+<h2> Crear guard</h2>
+<app-shell-layout> ng generate guard guard-name</app-shell-layout>
+
+<br>
+<button mat-raised-button class="primary-button"> Anterior </button>
+<button mat-raised-button class="primary-button" style="margin-left: 20px;"> Siguiente </button>
+
+
+<!-- <p>
+  nota para rutas: las rutas van 1 por 1 hasta que una coincida si hay más de 1
+  ruta, toma la primera el comodin "**" debe ser usado al final
+</p> -->

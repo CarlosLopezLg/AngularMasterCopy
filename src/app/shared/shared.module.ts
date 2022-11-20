@@ -3,11 +3,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
 import { ToolbarComponent } from '../shared/components/toolbar/toolbar.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ShellLayoutComponent } from './components/shell-layout/shell-layout.component';
 import { MaterialsModule } from './modules/materials/materials.module';
 
 const components = [
   SidebarComponent,
-  ToolbarComponent
+  ToolbarComponent,
+  CarouselComponent,
+  ShellLayoutComponent,
+  FooterComponent
 ]
 
 @NgModule({

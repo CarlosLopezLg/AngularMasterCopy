@@ -6,6 +6,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {ClipboardModule} from '@angular/cdk/clipboard';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 const materialModules = [
   MatSidenavModule,
@@ -13,7 +15,9 @@ const materialModules = [
   MatDividerModule,
   MatExpansionModule,
   MatIconModule,
-  MatToolbarModule
+  MatToolbarModule,
+  ClipboardModule,
+  MatTooltipModule
 ]
 
 @NgModule({

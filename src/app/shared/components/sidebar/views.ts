@@ -9,7 +9,7 @@ export const VIEWS: ViewInterface[] = [
       {
         icon: 'powershell',
         name: 'Comandos',
-        href: 'generales/comandos',
+        href: 'generales',
       },
       {
         icon: 'code-json',
