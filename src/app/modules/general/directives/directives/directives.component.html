@@ -1,0 +1,39 @@
+<div class="main-title">
+  <h1>Directivas</h1>
+</div>
+<br/>
+<p>
+  A continuación se presentarán las principales directivas de Angular.
+</p>
+<h2>Directiva NgIf</h2>
+<mat-divider></mat-divider>
+<br>
+<p> La directiva <b>*ngIf</b> ayuda a cargar contenido de manera dinámica en base a una condición </p>
+<p><b>Ejemplo:</b></p>
+
+<div class="playground">
+    <button mat-raised-button class="primary-button" (click)="toggleExample=!toggleExample">
+        ¡Presioname!
+    </button>
+    <br><br>
+    <p *ngIf="toggleExample"> ¡Este contenido aparece y desaparece!</p>
+</div>
+
+<p><b>Código:</b></p>
+<div class="playground">
+    <app-example-code [htmlContent]="ngIfHtmlContent" [tsContent]="ngIfTsContent"></app-example-code>
+</div>
+
+
+<br />
+
+<div class="page-navigator">
+  <button mat-raised-button class="primary-button" routerLink="/generales/comandos">
+    <mat-icon svgIcon="chevron-left"></mat-icon>
+    Anterior
+  </button>
+  <button mat-raised-button class="primary-button" routerLink="/generales/rutas" style="margin-left: 20px">
+    Siguiente
+    <mat-icon svgIcon="chevron-right"></mat-icon>
+  </button>
+</div>

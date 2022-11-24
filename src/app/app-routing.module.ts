@@ -14,8 +14,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   { 
-    path: 'generales', 
+    path: 'generales/comandos', 
     loadChildren: () => import('./modules/general/commands/commands.module').then(m => m.CommandsModule) 
+  },
+  { 
+    path: 'generales/directivas', 
+    loadChildren: () => import('./modules/general/directives/directives.module').then(m => m.DirectivesModule) 
   },
   {
     path: "**", 

@@ -1,0 +1,8 @@
+.multiline {
+    white-space: pre-wrap;
+    font-size: 15px;
+}
+
+mat-tab-group {
+    min-height: 100px;
+}

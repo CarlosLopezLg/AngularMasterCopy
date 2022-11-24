@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { CommandsRoutingModule } from './commands-routing.module';
-import { CommandsComponent } from './commands/commands.component';
+import { DirectivesRoutingModule } from './directives-routing.module';
+import { DirectivesComponent } from './directives/directives.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialsModule } from 'src/app/shared/modules/materials/materials.module';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
-    CommandsComponent
+    DirectivesComponent
   ],
   imports: [
     CommonModule,
-    CommandsRoutingModule,
+    DirectivesRoutingModule,
     SharedModule,
-    MaterialsModule
+    MaterialsModule,
+    FormsModule
   ]
 })
-export class CommandsModule {
-}
+export class DirectivesModule { }

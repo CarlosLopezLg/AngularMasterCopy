@@ -8,6 +8,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
 
 const materialModules = [
   MatSidenavModule,
@@ -17,7 +19,9 @@ const materialModules = [
   MatIconModule,
   MatToolbarModule,
   ClipboardModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatSlideToggleModule,
+  MatTabsModule
 ]
 
 @NgModule({

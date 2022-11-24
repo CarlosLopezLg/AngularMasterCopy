@@ -1,0 +1,11 @@
+<mat-tab-group dynamicHeight animationDuration="500ms" mat-stretch-tabs="false" mat-align-tabs="end">
+    <mat-tab *ngIf="htmlContent" [label]="htmlTitle">
+        <p class="multiline">{{htmlContent}}</p>
+    </mat-tab>
+    <mat-tab *ngIf="cssContent" [label]="cssTitle">
+        <p class="multiline">{{cssContent}}</p>
+    </mat-tab>
+    <mat-tab *ngIf="tsContent" [label]="tsTitle">
+        <p class="multiline">{{tsContent}}</p>
+    </mat-tab>
+</mat-tab-group>
