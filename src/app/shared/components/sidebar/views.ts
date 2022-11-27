@@ -22,9 +22,14 @@ export const VIEWS: ViewInterface[] = [
         href: 'generales/rutas',
       },
       {
+        icon: 'list-box-outline',
+        name: 'Formularios',
+        href: 'generales/formularios',
+      },
+      {
         icon: 'email',
         name: 'HTTP Client',
-        href: 'generales/rutas-externas',
+        href: 'generales/cliente/http',
       },
     ],
   },

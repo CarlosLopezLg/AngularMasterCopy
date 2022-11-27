@@ -1,73 +1,103 @@
 <div class="main-title">
-  <h1> Principales comandos en Angular CLI</h1>
+  <h1>Principales comandos en Angular CLI</h1>
 </div>
-<br>
-<p> A continuación se presentarán los principales comandos utilizados al momento de empezar a desarrollar un proyecto en Angular.</p>
+<br />
+<p>
+  A continuación se presentará un introducción al archivo de rutas de Angular.
+</p>
 
-<h2> Instalar CLI de Angular</h2>
+<h2>Instalar CLI de Angular</h2>
 <mat-divider></mat-divider>
-<br>
-<app-shell-layout> npm install -g @angular/cli</app-shell-layout>
+<br />
+<div class="x-limit">
+  <app-shell-layout> npm install -g @angular/cli</app-shell-layout>
+</div>
 
-<h2> Crear un proyecto nuevo</h2>
+<h2>Crear un proyecto nuevo</h2>
 <mat-divider></mat-divider>
-<br>
-<app-shell-layout> ng new my-first-project</app-shell-layout>
-<br>
-<p> En donde "my-first-project" será el lugar en donde se insertará el <b>nombre del proyecto</b>.</p>
+<br />
+<div class="x-limit">
+  <app-shell-layout> ng new my-first-project</app-shell-layout>
+</div>
+<br />
+<p>
+  En donde "my-first-project" será el lugar en donde se insertará el
+  <b>nombre del proyecto</b>.
+</p>
 
-<h2> Correr el proyecto en el navegador</h2>
+<h2>Correr el proyecto en el navegador</h2>
 <mat-divider></mat-divider>
-<br>
-<app-shell-layout> ng serve </app-shell-layout>
-<p> Banderas: </p>
-<p> <b>-o</b>: Abrir el navegador automáticamente</p>
+<br />
+<div class="x-limit">
+  <app-shell-layout> ng serve </app-shell-layout>
+</div>
+<p>Banderas:</p>
+<p><b>-o</b>: Abrir el navegador automáticamente</p>
 
-<h2> Compilar proyecto</h2>
+<h2>Compilar proyecto</h2>
 <mat-divider></mat-divider>
-<br>
-<app-shell-layout> ng build --prod</app-shell-layout>
-<br>
-<p> Con este comando, preparas los archivos para subir a producción la aplicación. También pasarán de Typescript a Javascript los archivos.</p>
+<br />
+<div class="x-limit">
+  <app-shell-layout> ng build --prod</app-shell-layout>
+</div>
+<br />
+<p>
+  Con este comando, preparas los archivos para subir a producción la aplicación.
+  También pasarán de Typescript a Javascript los archivos.
+</p>
 
 <h2>Crear componentes</h2>
 <mat-divider></mat-divider>
-<br>
-<app-shell-layout> 
-  <span class="shell-note"> //Comando completo</span> <br>
-  ng generate component component-name<br>
-  <span class="shell-note"> //Método abreviado</span> <br>
-  ng g c component-name
-</app-shell-layout>
-<p> Banderas: </p>
-<p> <b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
-<p> <b>--module</b>: Selecciona el módulo a declarar el componente.</p>
+<br />
+<div class="x-limit">
+  <app-shell-layout>
+    <span class="shell-note"> //Comando completo</span> <br />
+    ng generate component component-name<br />
+    <span class="shell-note"> //Método abreviado</span> <br />
+    ng g c component-name
+  </app-shell-layout>
+</div>
+<p>Banderas:</p>
+<p><b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
+<p><b>--module</b>: Selecciona el módulo a declarar el componente.</p>
 
-<h2> Crear servicio</h2>
+<h2>Crear servicio</h2>
 <mat-divider></mat-divider>
-<br>
+<br />
+<div class="x-limit">
 <app-shell-layout> ng generate service service-name</app-shell-layout>
-
-<h2> Crear módulo</h2>
+</div>
+<p>Banderas:</p>
+<p><b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
+<h2>Crear módulo</h2>
 <mat-divider></mat-divider>
-<br>
+<br />
+<div class="x-limit">
 <app-shell-layout> ng generate module module-name</app-shell-layout>
-<p> Banderas: </p>
-<p> <b>--routing</b>: Crea archivo de enrutamiento</p>
+</div>
+<p>Banderas:</p>
+<p><b>--routing</b>: Crea archivo de enrutamiento</p>
 
-<h2> Crear guard</h2>
+<h2>Crear guard</h2>
 <mat-divider></mat-divider>
-<br>
+<br />
+<div class="x-limit">
 <app-shell-layout> ng generate guard guard-name</app-shell-layout>
+</div>
 
-<br>
+<br />
 
 <div class="page-navigator">
   <button mat-raised-button class="primary-button" disabled="true">
     <mat-icon svgIcon="chevron-left"></mat-icon>
     Anterior
   </button>
-  <button mat-raised-button class="primary-button" routerLink="/generales/directivas" style="margin-left: 20px;">
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/generales/directivas"
+    style="margin-left: 20px"
+  >
     Siguiente
     <mat-icon svgIcon="chevron-right"></mat-icon>
   </button>

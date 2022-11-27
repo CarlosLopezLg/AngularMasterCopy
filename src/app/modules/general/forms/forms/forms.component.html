@@ -1,0 +1,96 @@
+<div class="main-title">
+  <h1>Formularios</h1>
+</div>
+<br />
+<p>A continuación se presentarán estructura básica de un formulario.</p>
+<br />
+<!-- formGroup -->
+<h2> FormGroup</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+  Los formularios son parte clave de una aplicación web, ya que es la forma en la que
+  un usuario puede ingresar información. Utilizar formularios reactivos tiene múltiples ventajas,
+  como validar los campos de entrada, estandarizar valores y otras características más.
+</p>
+
+<p> Requiere de tener importado el módulo "<b>ReactiveFormsModule</b>".</p>
+<p> 
+  <b>Nota: </b> Para explotar mejor el potencial de los formularios reactivos,
+  se trabajará con <b>Angular Materials</b>.
+</p>
+
+<div class="demostration-container">
+  <p><b>Ejemplo:</b></p>
+
+  <div class="playground demo-content">
+    <form [formGroup]="formOne">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre" formControlName="name"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="margin-left: 7px;">
+        <mat-label>Apellido</mat-label>
+        <input matInput placeholder="Apellido" formControlName="lastname"/>
+      </mat-form-field>
+    </form>
+    <p> Valor del formulario: {{formOne.value | json}}</p>
+  </div>
+
+  <p><b>Código:</b></p>
+  <div class="playground">
+      <app-example-code [htmlContent]="formOneHtmlContent" [tsContent]="formOneTsContent"></app-example-code>
+  </div>
+</div>
+
+<!-- Validators -->
+<br>
+<h2> Validators</h2>
+<mat-divider></mat-divider>
+<br />
+<p> Los validators son útiles para garantizar que la información enviada sea correcta.</p>
+
+<div class="demostration-container">
+  <p><b>Ejemplo:</b></p>
+
+  <div class="playground demo-content">
+    <form [formGroup]="formTwo">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre" formControlName="name"/>
+        <mat-error> Nombre inválido</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="margin-left: 7px;">
+        <mat-label>Apellido</mat-label>
+        <input matInput placeholder="Apellido" formControlName="lastname"/>
+        <mat-error> Apellido inválido </mat-error>
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" [disabled]="formTwo.invalid"> Enviar </button>
+  </div>
+
+  <p><b>Código:</b></p>
+  <div class="playground">
+      <app-example-code [htmlContent]="formTwoHtmlContent" [tsContent]="formTwoTsContent"></app-example-code>
+  </div>
+</div>
+<!-- Navigation -->
+<div class="page-navigator">
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/generales/rutas"
+  >
+    <mat-icon svgIcon="chevron-left"></mat-icon>
+    Anterior
+  </button>
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/generales/cliente/http"
+    style="margin-left: 20px"
+  >
+    Siguiente
+    <mat-icon svgIcon="chevron-right"></mat-icon>
+  </button>
+</div>

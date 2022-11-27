@@ -1,0 +1,69 @@
+<div class="main-title">
+  <h1>Cliente HTTP</h1>
+</div>
+<br />
+<p>
+  A continuación se presentará como comunicar el cliente con un servidor
+  back-end.
+</p>
+<br />
+<!-- Crear servicio -->
+<h2>Crear servicio</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+  El primer paso debe ser crear un servicio, en donde se guardarán las rutas a
+  consultar.
+</p>
+<div class="x-limit">
+  <app-shell-layout> ng generate service service-name</app-shell-layout>
+</div>
+<br />
+<div class="code-screen">{{ demoCodeOne }}</div>
+<br />
+<p>
+  En este ejemplo, se usará un API pública de
+  <a href="https://jsonplaceholder.typicode.com/" target="_blank"
+    >JSON Placeholder</a
+  >.
+</p>
+
+<!-- Consumir servicio -->
+<h2>Consumir servicio</h2>
+<mat-divider></mat-divider>
+<br />
+<p>Ahora, deberemos acceder al servicio desde nuestro componente.</p>
+<div class="demostration-container">
+  <p><b>Ejemplo:</b></p>
+
+  <div class="playground demo-content">
+    <p>Ejemplo</p>
+  </div>
+
+  <p><b>Código:</b></p>
+  <div class="playground">
+    <app-example-code [htmlContent]="'a'" [tsContent]="'b'"></app-example-code>
+  </div>
+</div>
+<br />
+
+<!-- Navigation -->
+<div class="page-navigator">
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/generales/formularios"
+  >
+    <mat-icon svgIcon="chevron-left"></mat-icon>
+    Anterior
+  </button>
+  <button
+    mat-raised-button
+    class="primary-button"
+    disabled="true"
+    style="margin-left: 20px"
+  >
+    Siguiente
+    <mat-icon svgIcon="chevron-right"></mat-icon>
+  </button>
+</div>

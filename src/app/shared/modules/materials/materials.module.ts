@@ -10,6 +10,9 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const materialModules = [
   MatSidenavModule,
@@ -21,7 +24,10 @@ const materialModules = [
   ClipboardModule,
   MatTooltipModule,
   MatSlideToggleModule,
-  MatTabsModule
+  MatTabsModule,
+  MatSnackBarModule,
+  MatInputModule,
+  MatFormFieldModule
 ]
 
 @NgModule({

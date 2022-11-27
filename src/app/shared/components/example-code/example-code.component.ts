@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-example-code',
@@ -15,7 +16,11 @@ export class ExampleCodeComponent implements OnInit {
   @Input() tsTitle:string = 'example.ts'
 
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar) { }
+
+  confirmCopy() {
+    this._snackBar.open('¡Texto copiado!', '', {duration: 500});
+  }
 
   ngOnInit(): void {
   }

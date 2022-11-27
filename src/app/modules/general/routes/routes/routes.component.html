@@ -1,0 +1,87 @@
+<div class="main-title">
+  <h1>Rutas</h1>
+</div>
+<br />
+<p>A continuación se presentarán las principales directivas de Angular.</p>
+<br />
+
+<!-- ¿Qué es? -->
+<h2>¿Qué es el archivo de rutas?</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+  Si accedes al archivo 'app.component.html', notarás que existe un componente
+  llamado
+  <b> <span><</span>router-outlet><span><</span>/router-outlet>. </b>Este
+  componente tiene como propósito cargar de manera dinámica distintos
+  componentes, los cuales se generan dependiento de la ruta del navegador. Es
+  por esto que Angular se considera un framework SPA (Single Page Application),
+  ya que no necesita recargar la página para cargar otra página (en este caso,
+  un componente).
+</p>
+
+<p>
+  Si accedes al archivo llamado 'app-routing.module.ts', notarás que existe un
+  arreglo llamado 'routes', y es aquí en donde relacionarás una ruta con un
+  componente.
+</p>
+
+<div class="code-screen">{{ codeRoutes }}</div>
+<br />
+<p>
+  Esta es una estructura simple de un arreglo de rutas, en donde predominan los
+  siguientes puntos:
+</p>
+<br />
+<p><b>path:</b> Aquí se incluye la ruta que cargará el componente.</p>
+<p>
+  <b>component:</b> Aquí se incluye el componente a cargar. Recuerda que el
+  componente debe estar importado.
+</p>
+<p>
+  <b>redirectTo:</b> Como su nombre lo dice, te permite redireccionarte a otra
+  ruta.
+</p>
+<br />
+<p>
+  Observa que en el primer objeto, la variable path está vacía, esto indica la
+  ruta original del sitio web (o localhost). También observa que en el último objeto,
+  la variable path tiene como valor "**", esto es un comodín que hace referencia a 
+  todas aquellas rutas ingresadas y que no fueron asignadas previamente, por lo que 
+  siempre se debe colocar hasta el final.
+</p>
+<p> existen más opciones que se pueden incluir en este arreglo, como los guards y
+    lazy load que se analizarán más adelante.</p>
+
+<!-- Crear router -->
+<h2>Crear archivo de rutas</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+  El archivo de rutas principal es 'app-routing.module.ts', pero puedes crear
+  otro un módulo junto con un archivo de rutas con el siguiente comando:
+</p>
+<div class="x-limit">
+<app-shell-layout> ng generate module module-name --routing</app-shell-layout>
+</div>
+
+<!-- Navigation -->
+<div class="page-navigator">
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/generales/directivas"
+  >
+    <mat-icon svgIcon="chevron-left"></mat-icon>
+    Anterior
+  </button>
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/generales/formularios"
+    style="margin-left: 20px"
+  >
+    Siguiente
+    <mat-icon svgIcon="chevron-right"></mat-icon>
+  </button>
+</div>

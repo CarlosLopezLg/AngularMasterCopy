@@ -5,28 +5,166 @@
 <p>
   A continuación se presentarán las principales directivas de Angular.
 </p>
+<br>
+<!-- NgModel -->
+<h2>Directiva NgModel</h2>
+<mat-divider></mat-divider>
+<br>
+<p> La directiva <b>ngModel</b> ayuda vincular una variable con un elemento html.</p>
+<p> <b>Nota:</b> La directiva ngModel requiere de importar 'FormsModule'.</p>
+<div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+
+    <div class="playground demo-content">
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Escribe cualquier cosa" [(ngModel)]="linkedValue">
+        </mat-form-field>
+        <p> Resultado: {{linkedValue}}</p>
+    </div>
+
+    <p><b>Código:</b></p>
+    <div class="playground">
+        <app-example-code [htmlContent]="ngModelHtmlContent" [tsContent]="ngModelTsContent"></app-example-code>
+    </div>
+</div>
+<p> Observa como el " <span>{{ </span><span>}}</span>" ayuda a mostrar una variable. A esto se le llama <b>interpolación</b>.</p>
+
+<br>
+<!-- NgClick -->
+<h2>Directiva NgClick (Click)</h2>
+<mat-divider></mat-divider>
+<br>
+<p> La directiva <b>ng-click</b> o <b>(click)</b> en versiones más actuales, ayuda asignar un evento de click a un componente.</p>
+<div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+
+    <div class="playground demo-content">
+        <button mat-raised-button class="primary-button" (click)="counter = counter + 1">Aumentar contador</button>
+        <p>{{counter}}</p>
+    </div>
+
+    <p><b>Código:</b></p>
+    <div class="playground">
+        <app-example-code [htmlContent]="ngClickHtmlContent" [tsContent]="ngClickTsContent"></app-example-code>
+    </div>
+</div>
+<br>
+<!-- NgIF -->
 <h2>Directiva NgIf</h2>
 <mat-divider></mat-divider>
 <br>
-<p> La directiva <b>*ngIf</b> ayuda a cargar contenido de manera dinámica en base a una condición </p>
-<p><b>Ejemplo:</b></p>
+<p> La directiva <b>*ngIf</b> ayuda a cargar contenido de manera dinámica en base a una condición.</p>
 
-<div class="playground">
-    <button mat-raised-button class="primary-button" (click)="toggleExample=!toggleExample">
-        ¡Presioname!
-    </button>
-    <br><br>
-    <p *ngIf="toggleExample"> ¡Este contenido aparece y desaparece!</p>
+<div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+    <div class="playground">
+        <button mat-raised-button class="primary-button" (click)="toggleExample=!toggleExample">
+            ¡Presioname!
+        </button>
+        <br><br>
+        <p *ngIf="toggleExample"> ¡Este contenido aparece y desaparece!</p>
+    </div>
+
+    <p><b>Código:</b></p>
+    <div class="playground">
+        <app-example-code [htmlContent]="ngIfHtmlContent" [tsContent]="ngIfTsContent"></app-example-code>
+    </div>
 </div>
+<p> Observa como el "(click)" en el botón denota una acción al ser presionado.</p>
 
-<p><b>Código:</b></p>
-<div class="playground">
-    <app-example-code [htmlContent]="ngIfHtmlContent" [tsContent]="ngIfTsContent"></app-example-code>
+<!-- NgShow -->
+<h2>Directiva NgShow / Hidden</h2>
+<mat-divider></mat-divider>
+<br>
+<p> La directiva <b>hidden</b> en versiones actuales o <b>ng-show</b> en versiones antiguas, 
+    es muy similar a *ngIf, con la diferencia de que el contenido no es "borrado", sino sólamente ocultado. </p>
+<div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+
+    <div class="playground">
+        <button mat-raised-button class="primary-button" (click)="toggleNgShow=!toggleNgShow">
+            ¡Presioname!
+        </button>
+        <br><br>
+        <p [hidden]="toggleNgShow"> ¡Este contenido aparece y desaparece!</p>
+    </div>
+
+    <p><b>Código:</b></p>
+    <div class="playground">
+        <app-example-code [htmlContent]="ngShowHtmlContent" [tsContent]="ngShowTsContent"></app-example-code>
+    </div>
 </div>
-
+<p> Observa como el "(click)" en el botón denota una acción al ser presionado</p>
+<br>
+<h2>¿Cuándo usar NgIf y NgShow (Hidden)?</h2>
+<p> Si seleccionas el contenido que aparece y desaparece en los dos ejemplos previos, presionas click derecho
+    y seleccionas la opción "Inspeccionar", notarás que en el ejemplo de <b>NgIf</b>, el elemento es eliminado del DOM,
+    mientras que en el ejemplo de <b>Hidden</b>, el elemento seguirá ahí, pero escondido.
+</p>
+<p>
+    Es decir, que <b>NgIf</b> borra completamente el contenido, por lo que no podrá ser accedido de ninguna
+    forma por el inspeccionador, ideal para limitar opciones que no desees que estén al alcance de cualqueira.
+    El punto negativo de esto, es que cada vez que se requiera acceder otra vez al componente, el navegador
+    debe volver a cargar todos los recursos nuevamente, por lo que no se debe usar con elementos muy pesados o que 
+    cambien de estado constantemente.
+</p>
+<p>
+    Como la directiva <b>Hidden</b> no recarga el contenido en cada uso, es más recomendable su uso para
+    elementos que cambian de estado seguido, y útil para ocasiones en el que no se pierda el contenido interno,
+    por ejemplo, un formulario, que al ocultarse y mostrarse, el contenido se mantendrá, a diferencia de la 
+    directiva <b>NgIf</b>.
+</p>
 
 <br />
 
+<!-- NgFor -->
+<h2>Directiva NgFor</h2>
+<mat-divider></mat-divider>
+<br>
+<p> La directiva <b>*ngFor</b> ayuda a crear crear contenido por cada iteración del valor asignado.</p>
+<div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+
+    <div class="playground demo-content">
+        <mat-form-field appearance="fill">
+            <input #demoInput matInput placeholder="Escribe cualquier cosa">
+        </mat-form-field>
+        <button mat-raised-button class="primary-button" (click)="names.push(demoInput.value)" style="margin-left: 5px;">Agregar</button>
+        <li *ngFor="let name of names; index as i;"> #{{i}} - {{name}}</li>
+    </div>
+
+    <p><b>Código:</b></p>
+    <div class="playground">
+        <app-example-code [htmlContent]="ngForHtmlContent" [tsContent]="ngForTsContent"></app-example-code>
+    </div>
+</div>
+<br>
+
+<!-- Bind properties -->
+<h2>Bind properties</h2>
+<mat-divider></mat-divider>
+<br>
+<p> Los componentes cuentan con múltiples propiedades, como  'style', 'class', 'src', 'disabled', etc.
+    Cada una de las propiedades puede ser modificada de forma dinámica mediante código, 
+    únicamente insertando las propiedades dentro de '[ ]'.
+</p>
+<div class="demostration-container">
+    <p><b>Ejemplo (con clases):</b></p>
+
+    <div class="playground demo-content">
+        <button mat-raised-button (click)="currentClass='red-square'" style="background-color: rgb(207, 14, 14); color: white;">Cuadrado</button>
+        <button mat-raised-button (click)="currentClass='blue-rectangle'" style="margin-left: 7px;background-color: rgb(12, 12, 210); color: white">Rectángulo</button>
+        <div style="margin-top: 10px;" [class]="currentClass"></div>
+    </div>
+
+    <p><b>Código:</b></p>
+    <div class="playground">
+        <app-example-code [htmlContent]="bindingHtmlContent" [tsContent]="bindingTsContent" [cssContent]="bindingCssContent"></app-example-code>
+    </div>
+</div>
+<br>
+
+<!-- Navigation -->
 <div class="page-navigator">
   <button mat-raised-button class="primary-button" routerLink="/generales/comandos">
     <mat-icon svgIcon="chevron-left"></mat-icon>
