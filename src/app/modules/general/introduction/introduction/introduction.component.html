@@ -1,0 +1,114 @@
+<div class="main-title">
+  <h1>Introducción a Angular</h1>
+</div>
+<br />
+<p>
+  A continuación se presentará una introducción y un conjunto de requisitos para
+  empezar a trabajar con este framework.
+</p>
+<br />
+<!-- Qué es -->
+<h2>¿Qué es Angular?</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+  Angular es un framework que nos ayuda a desarrollar aplicaciones web SPA, el
+  cual está orientado a componentes. Si quieres darte una idea de qué se puede
+  hacer con esta herramienta, YouTube es un ejemplo claro, y si aun no estás
+  impresionado, ¡también esta misma página de donde estás leyendo esto está
+  desarrollada en Angular!
+</p>
+<p>
+  Este framework, junto con React y Vue son los más solicitados a nivel laboral,
+  por lo que agregar Angular a tu curriculum no vendría nada mal.
+</p>
+<!-- Requisitos -->
+<br />
+<h2>Requisitos</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+  Para poder empezar a programar con este framework, se necesitan cumplir los
+  siguientes requisitos:
+</p>
+<p>
+  <b>Node.js</b>: Puedes decargar la última versión
+  <a href="https://nodejs.org/en/download/" target="_blank">aquí</a>.
+</p>
+<p>
+  <b>Npm</b>: Necesario para la instalación de paquetes, suele estar incluído en
+  la instalación de Node.
+</p>
+<p>
+  <b>Angular CLI</b>: Necesario para correr comandos de Angular. para su
+  instalación es necesario abrir la terminal e insertar el siguiente comando:
+</p>
+<br />
+<div class="x-limit">
+  <app-shell-layout> npm install -g @angular/cli</app-shell-layout>
+</div>
+<br />
+<p>
+  <b>Nota: </b> Algunas terminales por default no permiten ingresar comandos de
+  Angular, si presentas este error, puedes solucionarlo con el siguiente
+  comando:
+</p>
+<div class="x-limit">
+  <app-shell-layout>
+    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy
+    RemoteSigned</app-shell-layout
+  >
+</div>
+<br />
+<!-- Comenzar -->
+<h2>Comenzar a desarrollar</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+  Para comenzar a desarrollar tu primera aplicación web con Angular, deberás
+  dirigirte en tu terminal a la dirección donde desees crear el proyeco. A
+  continuación, deberás insertar el siguiente comando:
+</p>
+<br />
+<div class="x-limit">
+  <app-shell-layout> ng new my-first-project</app-shell-layout>
+</div>
+<br />
+<p>
+  Una vez creado el proyecto, veremos como luce inicialmete el proyecto, sin
+  embargo, debes saber que Angular requiere de otro comando para poder mostrar
+  la página. El comando es el siguiente:
+</p>
+<div class="x-limit">
+  <app-shell-layout>
+    <span class="shell-note"> //Ingresar a la carpeta del proyecto</span> 
+    <br>
+    cd my-first-project
+    <br>
+    <span class="shell-note"> //Iniciar proyecto</span>
+    <br>
+    ng serve -o
+</app-shell-layout>
+</div>
+<br>
+<p> Si todo salió correctamente, observarás algo como esto:</p>
+<br>
+<div class="center-content">
+    <img class="screenshot" src="../../../../../assets/screenshots/angularstart.png" alt="captura de angular">
+</div>
+<!-- Navigation -->
+<div class="page-navigator">
+  <button mat-raised-button class="primary-button" disabled="true">
+    <mat-icon svgIcon="chevron-left"></mat-icon>
+    Anterior
+  </button>
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/generales/comandos"
+    style="margin-left: 20px"
+  >
+    Siguiente
+    <mat-icon svgIcon="chevron-right"></mat-icon>
+  </button>
+</div>

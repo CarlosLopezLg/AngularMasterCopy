@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-commands',
@@ -7,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommandsComponent implements OnInit {
 
-  constructor() { }
+  generatorForm!: FormGroup;
+  generatedCommand: string = 'Comando generado';
+  isGenerated: boolean = false;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    window.scroll({
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth'
+    this.generatorForm = this.fb.group({
+      name: [''],
+      lastname: ['']
     });
+  }
+
+  generateCommand():void {
+    this.isGenerated = true;
   }
 
 }

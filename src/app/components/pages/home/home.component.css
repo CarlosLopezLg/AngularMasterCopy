@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    text-shadow: var(--text-border-red-1);
+    text-shadow: var(--text-border-black);
     opacity: 0.9;
     transition: all 0.25s ease;
     -webkit-transition: all 0.25s ease;

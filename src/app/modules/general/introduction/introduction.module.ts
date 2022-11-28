@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CommandsRoutingModule } from './commands-routing.module';
-import { CommandsComponent } from './commands/commands.component';
+import { IntroductionRoutingModule } from './introduction-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialsModule } from 'src/app/shared/modules/materials/materials.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { IntroductionComponent } from './introduction/introduction.component';
 
 
 @NgModule({
   declarations: [
-    CommandsComponent
+    IntroductionComponent
   ],
   imports: [
     CommonModule,
-    CommandsRoutingModule,
+    IntroductionRoutingModule,
     SharedModule,
-    MaterialsModule,
-    ReactiveFormsModule
+    MaterialsModule
   ]
 })
-export class CommandsModule {
-}
+export class IntroductionModule { }

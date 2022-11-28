@@ -38,7 +38,7 @@
 <mat-divider></mat-divider>
 <br />
 <div class="x-limit">
-  <app-shell-layout> ng build --prod</app-shell-layout>
+  <app-shell-layout> ng build --configuration production</app-shell-layout>
 </div>
 <br />
 <p>
@@ -65,7 +65,7 @@
 <mat-divider></mat-divider>
 <br />
 <div class="x-limit">
-<app-shell-layout> ng generate service service-name</app-shell-layout>
+  <app-shell-layout> ng generate service service-name</app-shell-layout>
 </div>
 <p>Banderas:</p>
 <p><b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
@@ -73,7 +73,7 @@
 <mat-divider></mat-divider>
 <br />
 <div class="x-limit">
-<app-shell-layout> ng generate module module-name</app-shell-layout>
+  <app-shell-layout> ng generate module module-name</app-shell-layout>
 </div>
 <p>Banderas:</p>
 <p><b>--routing</b>: Crea archivo de enrutamiento</p>
@@ -82,13 +82,47 @@
 <mat-divider></mat-divider>
 <br />
 <div class="x-limit">
-<app-shell-layout> ng generate guard guard-name</app-shell-layout>
+  <app-shell-layout> ng generate guard guard-name</app-shell-layout>
 </div>
 
 <br />
+<!-- GENERADOR -->
+<!-- <h2>Generar comando</h2>
+<mat-divider></mat-divider>
+<br />
+<div class="demostration-container">
+  <p><b>Generador:</b></p>
+
+  <div class="playground demo-content">
+    <form [formGroup]="generatorForm">
+      <p>Selecciona un elemento a generar:</p>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre del componente</mat-label>
+        <input matInput placeholder="Nombre" formControlName="name" />
+      </mat-form-field>
+      <br />
+      <div class="center-content">
+        <button (click)="generateCommand()" mat-raised-button class="primary-button">Generar</button>
+      </div>
+    </form>
+  </div>
+  <br />
+  <div [hidden]="!isGenerated">
+    <p>Resultado:</p>
+    <div class="x-limit">
+      <app-shell-layout> {{ generatedCommand }}</app-shell-layout>
+    </div>
+  </div>
+  <br />
+</div>
+ -->
 
 <div class="page-navigator">
-  <button mat-raised-button class="primary-button" disabled="true">
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/generales/introduccion"
+  >
     <mat-icon svgIcon="chevron-left"></mat-icon>
     Anterior
   </button>
