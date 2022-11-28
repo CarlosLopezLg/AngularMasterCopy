@@ -1,0 +1,26 @@
+.primary-selection { 
+    width: 100%;
+    height: 60px;
+    color: white;
+    text-align: center;
+    background-color: var(--color-red-1);
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-shadow: var(--text-border-red-1);
+    opacity: 0.9;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+}
+
+.primary-selection:hover { 
+    opacity: 1;
+    font-size: 60px;
+    height: 70px;
+}

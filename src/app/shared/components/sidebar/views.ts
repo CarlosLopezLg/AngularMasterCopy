@@ -33,6 +33,7 @@ export const VIEWS: ViewInterface[] = [
       },
     ],
   },
+  /*
   //Angular Materials
   {
     icon: 'angularjs',
@@ -108,4 +109,5 @@ export const VIEWS: ViewInterface[] = [
       },
     ],
   },
+  */
 ];

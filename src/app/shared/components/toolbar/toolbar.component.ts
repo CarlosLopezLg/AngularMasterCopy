@@ -19,4 +19,8 @@ export class ToolbarComponent implements OnInit {
     this.emitterService.toggleSidebar.emit();
   }
 
+  goToLink(url: string){
+    window.open(url, "_blank");
+}
+
 }
