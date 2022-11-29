@@ -7,6 +7,11 @@ export const VIEWS: ViewInterface[] = [
     name: 'Generales Angular',
     views: [
       {
+        icon: 'bookshelf',
+        name: 'Introducción',
+        href: 'generales/introduccion',
+      },
+      {
         icon: 'powershell',
         name: 'Comandos',
         href: 'generales/comandos',
@@ -33,6 +38,7 @@ export const VIEWS: ViewInterface[] = [
       },
     ],
   },
+  /*
   //Angular Materials
   {
     icon: 'angularjs',
@@ -108,4 +114,5 @@ export const VIEWS: ViewInterface[] = [
       },
     ],
   },
+  */
 ];

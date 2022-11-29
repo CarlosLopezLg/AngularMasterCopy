@@ -6,6 +6,8 @@ import { PageNotFoundComponent } from './components/pages/page-not-found/page-no
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
+  //GENERAL
+  { path: 'generales/introduccion', loadChildren: () => import('./modules/general/introduction/introduction.module').then(m => m.IntroductionModule) },
   { path: 'generales/comandos', loadChildren: () => import('./modules/general/commands/commands.module').then(m => m.CommandsModule) },
   { path: 'generales/directivas', loadChildren: () => import('./modules/general/directives/directives.module').then(m => m.DirectivesModule) },
   { path: 'generales/rutas', loadChildren: () => import('./modules/general/routes/routes.module').then(m => m.RoutesModule) },
