@@ -104,6 +104,7 @@ h2 {
     width: 100%;
     min-height: 50px;
     padding: 5px;
+    box-sizing: border-box;
 }
 
 .code-screen { 
@@ -113,6 +114,7 @@ h2 {
     border-radius: 5px 5px 5px 5px;
     color: white;
     padding: 15px;
+    box-sizing: border-box;
     font-family: monospace;
     font-size: 15px;
     white-space: pre-wrap;
@@ -122,4 +124,16 @@ h2 {
 .x-limit {
     width: 100%;
     overflow-x: auto;
+}
+
+.demostration-container {
+    background-color: whitesmoke;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.demo-content {
+    padding: 10px;
+    overflow-x: auto;
+    box-sizing: border-box;
 }
