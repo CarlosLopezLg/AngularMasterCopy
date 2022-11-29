@@ -14,6 +14,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRippleModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 const materialModules = [
   MatSidenavModule,
@@ -29,7 +30,8 @@ const materialModules = [
   MatSnackBarModule,
   MatInputModule,
   MatFormFieldModule,
-  MatRippleModule
+  MatRippleModule,
+  MatSelectModule
 ]
 
 @NgModule({

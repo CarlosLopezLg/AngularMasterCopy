@@ -95,14 +95,29 @@
 
   <div class="playground demo-content">
     <form [formGroup]="generatorForm">
+
       <p>Selecciona un elemento a generar:</p>
+      <mat-form-field appearance="fill">
+        <mat-label>Elemento a generar</mat-label>
+        <mat-select formControlName="option">
+          <mat-option *ngFor="let option of options" [value]="option.value">
+            {{option.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p> Selecciona un nombre:</p>
       <mat-form-field appearance="outline">
         <mat-label>Nombre del componente</mat-label>
         <input matInput placeholder="Nombre" formControlName="name" />
       </mat-form-field>
+      <p> {{generatorForm.value | json}}</p>
       <br />
       <div class="center-content">
-        <button (click)="generateCommand()" mat-raised-button class="primary-button">Generar</button>
+        <button 
+        (click)="generateCommand()" 
+        mat-raised-button class="primary-button"
+        [disabled]="generatorForm.invalid">Generar</button>
       </div>
     </form>
   </div>
