@@ -87,7 +87,7 @@
 
 <br />
 <!-- GENERADOR -->
-<!-- <h2>Generar comando</h2>
+<h2>Generar comando</h2>
 <mat-divider></mat-divider>
 <br />
 <div class="demostration-container">
@@ -100,7 +100,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Elemento a generar</mat-label>
         <mat-select formControlName="option">
-          <mat-option *ngFor="let option of options" [value]="option.value">
+          <mat-option *ngFor="let option of options" [value]="option">
             {{option.name}}
           </mat-option>
         </mat-select>
@@ -111,7 +111,15 @@
         <mat-label>Nombre del componente</mat-label>
         <input matInput placeholder="Nombre" formControlName="name" />
       </mat-form-field>
-      <p> {{generatorForm.value | json}}</p>
+      <p> Opciones extras: </p>
+      <!-- Componente y servicio -->
+      <mat-checkbox formControlName="checkTesting"> No generar archivo de testing</mat-checkbox>
+      <br>
+      <!-- Componente -->
+      <mat-checkbox formControlName="checkModule"> Incluir en módulo</mat-checkbox>
+      <br>
+      <!-- Módulo -->
+      <mat-checkbox formControlName="checkRouting"> Generar archivo de rutas</mat-checkbox>
       <br />
       <div class="center-content">
         <button 
@@ -130,7 +138,7 @@
   </div>
   <br />
 </div>
- -->
+
 
 <div class="page-navigator">
   <button

@@ -119,6 +119,18 @@ h2 {
     padding: 5px;
 }
 
+.demostration-container {
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
+.demo-content {
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
 .code-screen {
     min-height: 50px;
     width: 100%;

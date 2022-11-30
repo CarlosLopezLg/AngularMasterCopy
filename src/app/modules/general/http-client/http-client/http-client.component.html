@@ -7,7 +7,20 @@
   back-end.
 </p>
 <br />
+<!-- Crear intefraz -->
+<h2>Crear intefraz</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+  Una buena práctica antes de consumir un servicio, es crear una intefraz
+  describiendo la respuesta esperada. Si por el momento no deseas realizar este paso,
+  basta con escribir "any" en lugar del nombre de la interfaz en siguientes ejemplos.
+</p>
+<br />
+<div class="code-screen">{{ demoCodeInterface }}</div>
+<br />
 <!-- Crear servicio -->
+<br>
 <h2>Crear servicio</h2>
 <mat-divider></mat-divider>
 <br />
@@ -29,7 +42,7 @@
 </p>
 
 <!-- Consumir servicio -->
-<!-- <h2>Consumir servicio</h2>
+<h2>Consumir servicio</h2>
 <mat-divider></mat-divider>
 <br />
 <p>Ahora, deberemos acceder al servicio desde nuestro componente.</p>
@@ -37,15 +50,20 @@
   <p><b>Ejemplo:</b></p>
 
   <div class="playground demo-content">
-    <p>Ejemplo</p>
+    <button [disabled]="postsLoaded" mat-raised-button (click)="getPosts()"> Consumir servicio </button>
+    <div *ngFor="let post of posts">
+      <p><b>{{ post.name }}</b></p>
+      <p>{{ post.email }}</p>
+      <mat-divider></mat-divider>
+    </div>
   </div>
-
+  <br />
   <p><b>Código:</b></p>
   <div class="playground">
-    <app-example-code [htmlContent]="'a'" [tsContent]="'b'"></app-example-code>
+    <app-example-code [htmlContent]="httpDemoHtmlContent" [tsContent]="httpDemoTsContent"></app-example-code>
   </div>
 </div>
-<br /> -->
+<br />
 
 <!-- Navigation -->
 <div class="page-navigator">
