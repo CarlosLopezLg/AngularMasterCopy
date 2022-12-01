@@ -5,5 +5,6 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class EmitterService {
   public toggleSidebar: EventEmitter<any> = new EventEmitter();
+  public acceptedCookies: EventEmitter<any> = new EventEmitter();
   constructor() { }
 }

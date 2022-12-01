@@ -8,6 +8,7 @@
     <div class="content-wrap">
       <div style="padding-left: 40px; padding-right: 40px; padding-top: 10px; box-sizing: border-box;">
         <router-outlet (activate)="onActivate()"></router-outlet>
+        <app-cookie-advice *ngIf="!cookiesAccepted"></app-cookie-advice>
       </div>
       <app-footer></app-footer>
     </div>
