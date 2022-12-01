@@ -11,6 +11,7 @@ export class CommandsComponent implements OnInit {
   generatorForm!: FormGroup;
   generatedCommand: string = 'Comando generado';
   isGenerated: boolean = false;
+  optSelected: number = 0;
   options:Array<any> = [
     {
       name: "componente",
@@ -34,12 +35,17 @@ export class CommandsComponent implements OnInit {
     },
   ]
 
+  testingOptions = [1,3];
+  moduleOptions = [1];
+  routingOptions = [2];
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.generatorForm = this.fb.group({
       option: ['', [Validators.required]],
       name: ['', [Validators.required]],
+      componentModule: [''],
       checkTesting: [''],
       checkModule: [''],
       checkRouting: ['']
@@ -50,14 +56,15 @@ export class CommandsComponent implements OnInit {
     const option = this.generatorForm.get('option')?.value;
     const name = this.generatorForm.get('name')?.value;
     const checkTesting = this.generatorForm.get('checkTesting')?.value;
+    const componentModule = this.generatorForm.get('componentModule')?.value;
     const checkModule = this.generatorForm.get('checkModule')?.value;
     const checkRouting = this.generatorForm.get('checkRouting')?.value;
     this.generatedCommand = 'ng generate ' + option.commandName + ' ' + name;
-    if (checkTesting)
+    if (checkTesting && this.testingOptions.includes(option.value))
       this.generatedCommand = this.generatedCommand + ' --skip-tests';
-    if (checkModule)
-      this.generatedCommand = this.generatedCommand + ' --module';
-    if (checkRouting)
+    if (checkModule && this.moduleOptions.includes(option.value))
+      this.generatedCommand = this.generatedCommand + ' --module ' + componentModule;
+    if (checkRouting && this.routingOptions.includes(option.value))
       this.generatedCommand = this.generatedCommand + ' --routing';
     this.isGenerated = true;
   }

@@ -99,7 +99,7 @@
       <p>Selecciona un elemento a generar:</p>
       <mat-form-field appearance="fill">
         <mat-label>Elemento a generar</mat-label>
-        <mat-select formControlName="option">
+        <mat-select formControlName="option" (selectionChange)="optSelected = $event.value.value;" >
           <mat-option *ngFor="let option of options" [value]="option">
             {{option.name}}
           </mat-option>
@@ -111,16 +111,27 @@
         <mat-label>Nombre del componente</mat-label>
         <input matInput placeholder="Nombre" formControlName="name" />
       </mat-form-field>
-      <p> Opciones extras: </p>
+      <p *ngIf="optSelected"> Opciones extras: </p>
       <!-- Componente y servicio -->
-      <mat-checkbox formControlName="checkTesting"> No generar archivo de testing</mat-checkbox>
-      <br>
+      <div *ngIf="testingOptions.includes(optSelected)">
+        <mat-checkbox formControlName="checkTesting"> No generar archivo de testing</mat-checkbox>
+        <br>
+      </div>
       <!-- Componente -->
-      <mat-checkbox formControlName="checkModule"> Incluir en módulo</mat-checkbox>
-      <br>
+      <div *ngIf="moduleOptions.includes(optSelected)">
+        <mat-checkbox formControlName="checkModule"> Incluir en módulo</mat-checkbox>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre del módulo</mat-label>
+          <input matInput placeholder="Nombre" formControlName="componentModule" />
+        </mat-form-field>
+        <br>
+      </div>
       <!-- Módulo -->
-      <mat-checkbox formControlName="checkRouting"> Generar archivo de rutas</mat-checkbox>
-      <br />
+      <div *ngIf="routingOptions.includes(optSelected)">
+        <mat-checkbox formControlName="checkRouting"> Generar archivo de rutas</mat-checkbox>
+        <br />
+      </div>
       <div class="center-content">
         <button 
         (click)="generateCommand()" 
@@ -159,8 +170,3 @@
     <mat-icon svgIcon="chevron-right"></mat-icon>
   </button>
 </div>
-
-<!-- <p>
-  nota para rutas: las rutas van 1 por 1 hasta que una coincida si hay más de 1
-  ruta, toma la primera el comodin "**" debe ser usado al final
-</p> -->
