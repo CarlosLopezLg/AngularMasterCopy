@@ -2,5 +2,7 @@
     background-color: var(--color-red-2);
     height:250px;
     width: 100%;
-    color: white
+    color: white;
+    padding: 50px;
+    box-sizing: border-box;
 }

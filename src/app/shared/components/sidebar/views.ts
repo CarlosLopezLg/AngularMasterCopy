@@ -38,7 +38,6 @@ export const VIEWS: ViewInterface[] = [
       },
     ],
   },
-  /*
   //Angular Materials
   {
     icon: 'angularjs',
@@ -47,10 +46,11 @@ export const VIEWS: ViewInterface[] = [
       {
         icon: 'button-cursor',
         name: 'Botones',
-        href: 'materials/buttons',
+        href: 'materials/botones',
       },
     ],
   },
+  /*
   //Typescript
   {
     icon: 'language-typescript',

@@ -1,0 +1,94 @@
+<div class="main-title">
+    <h1>Botones</h1>
+  </div>
+  <br />
+  <p>
+    A continuación se presentarán ejemplos del uso botones con Angular Materials.
+  </p>
+  <br />
+  <!-- Implementación -->
+  <h2>Implementación</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    Para el correcto funcionamiento de los botones, se requiere de importar el siguiente
+    módulo:
+  </p>
+  <br>
+  <div class="code-screen">{{importString}}</div>
+  <br>
+  <div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+
+    <div class="playground demo-content centerSection">
+        <section>
+            <b>Basic</b>
+            <div class="buttons-container">
+              <button mat-button>Basic</button>
+              <button mat-button color="primary">Primary</button>
+              <button mat-button color="accent">Accent</button>
+              <button mat-button color="warn">Warn</button>
+              <button mat-button disabled>Disabled</button>
+              <a mat-button href="#" target="_blank">Link</a>
+            </div>
+          </section>
+          <mat-divider></mat-divider>
+          <section>
+            <b>Raised</b>
+            <div class="buttons-container">
+              <button mat-raised-button>Basic</button>
+              <button mat-raised-button color="primary">Primary</button>
+              <button mat-raised-button color="accent">Accent</button>
+              <button mat-raised-button color="warn">Warn</button>
+              <button mat-raised-button disabled>Disabled</button>
+              <a mat-raised-button href="#" target="_blank">Link</a>
+            </div>
+          </section>
+          <mat-divider></mat-divider>
+          <section>
+            <b>Stroked</b>
+            <div class="buttons-container">
+              <button mat-stroked-button>Basic</button>
+              <button mat-stroked-button color="primary">Primary</button>
+              <button mat-stroked-button color="accent">Accent</button>
+              <button mat-stroked-button color="warn">Warn</button>
+              <button mat-stroked-button disabled>Disabled</button>
+              <a mat-stroked-button href="#" target="_blank">Link</a>
+            </div>
+          </section>
+          <mat-divider></mat-divider>
+          <section>
+            <b>Flat</b>
+            <div class="buttons-container">
+              <button mat-flat-button>Basic</button>
+              <button mat-flat-button color="primary">Primary</button>
+              <button mat-flat-button color="accent">Accent</button>
+              <button mat-flat-button color="warn">Warn</button>
+              <button mat-flat-button disabled>Disabled</button>
+              <a mat-flat-button href="#" target="_blank">Link</a>
+            </div>
+          </section>
+    </div>
+
+    <p><b>Código:</b></p>
+    <div class="playground">
+        <app-example-code [htmlContent]="buttonsOneHtmlContent" [tsContent]="buttonsOneTsContent"></app-example-code>
+    </div>
+</div>  
+
+  <!-- Navigation -->
+<div class="page-navigator">
+    <button mat-raised-button class="primary-button" disabled="true">
+      <mat-icon svgIcon="chevron-left"></mat-icon>
+      Anterior
+    </button>
+    <button
+      mat-raised-button
+      class="primary-button"
+      routerLink="/generales/comandos"
+      style="margin-left: 20px"
+    >
+      Siguiente
+      <mat-icon svgIcon="chevron-right"></mat-icon>
+    </button>
+  </div>

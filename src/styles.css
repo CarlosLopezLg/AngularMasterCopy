@@ -100,6 +100,12 @@ h2 {
     text-align: center;
 }
 
+@media screen and (max-width: 601px) {
+    .main-title h1 {
+        font-size: 25px;
+    }
+}
+
 .page-navigator {
     display: flex;
     height: 50px;
