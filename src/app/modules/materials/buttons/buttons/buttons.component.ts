@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ButtonsComponent implements OnInit {
 
   importString = `import {MatButtonModule} from '@angular/material/button';`;
-  buttonsOneHtmlContent = `
+  // Button
+  buttonHtmlContent = `
+  <button mat-button style="background-color: rgb(137, 208, 239);">Primary</button>
+  `;
+  // Buttons Group
+  buttonsGroupHtmlContent = `
   <section>
             <b>Basic</b>
             <div class="buttons-container">
@@ -56,7 +61,19 @@ export class ButtonsComponent implements OnInit {
               <a mat-flat-button href="#" target="_blank">Link</a>
             </div>
           </section>`;
-  buttonsOneTsContent = `b`;
+  buttonsGroupCssContent = `
+  .centerSection section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
+  }
+
+  .buttons-container button{
+      margin: 5px;
+  }
+`;
 
   constructor() { }
 

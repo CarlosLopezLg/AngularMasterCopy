@@ -2,5 +2,17 @@
   <div class="footer-container">
     <p><b>Contacto:</b></p>
     <p>contacto@cprogramadores.com</p>
+
+    <div class="icon-links">
+      <button (click)="goToLink('https://www.youtube.com/channel/UCwnmM4PmCmmSxzpWK8C_vcA')" mat-icon-button matTooltip="Canal de Youtube" aria-label="Youtube">
+        <mat-icon svgIcon="youtube"></mat-icon>
+      </button>
+      <button (click)="goToLink('https://ko-fi.com/cprogramadores')" mat-icon-button matTooltip="Donar :D" aria-label="Donación">
+        <mat-icon svgIcon="coffee"></mat-icon>
+      </button>
+      <button (click)="goToLink('https://cprogramadores.com')" mat-icon-button matTooltip="Página web" aria-label="Página web">
+        <mat-icon svgIcon="rabbit"></mat-icon>
+      </button>
+    </div>
   </div>
 </footer>

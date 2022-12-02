@@ -114,10 +114,6 @@ h2 {
     justify-content: center;
 }
 
-.page-navigator button mat-icon {
-    margin-top: -12px;
-}
-
 .playground {
     background-color: rgb(241, 239, 239);
     width: 100%;

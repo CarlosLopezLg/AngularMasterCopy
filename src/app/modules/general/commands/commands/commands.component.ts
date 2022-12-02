@@ -33,10 +33,30 @@ export class CommandsComponent implements OnInit {
       commandName: "guard",
       value: 4
     },
+    {
+      name: "clase",
+      commandName: "class",
+      value: 5
+    },
+    {
+      name: "interfaz",
+      commandName: "interface",
+      value: 6
+    },
+    {
+      name: "interceptor",
+      commandName: "interceptor",
+      value: 7
+    },
+    {
+      name: "pipe",
+      commandName: "pipe",
+      value: 8
+    }
   ]
 
-  testingOptions = [1,3];
-  moduleOptions = [1];
+  testingOptions = [1,3,5,7,8];
+  moduleOptions = [1,2,4,8];
   routingOptions = [2];
 
   constructor(private fb: FormBuilder) { }

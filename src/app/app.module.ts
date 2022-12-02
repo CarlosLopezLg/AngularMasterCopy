@@ -28,6 +28,5 @@ import { SharedModule } from './shared/shared.module';
 })
 export class AppModule {
   constructor() {
-    console.log("debería funcionar")
   }
  }

@@ -108,27 +108,28 @@
 
       <p> Selecciona un nombre:</p>
       <mat-form-field appearance="outline">
-        <mat-label>Nombre del componente</mat-label>
+        <mat-label>Nombre</mat-label>
         <input matInput placeholder="Nombre" formControlName="name" />
       </mat-form-field>
-      <p *ngIf="optSelected"> Opciones extras: </p>
+      <p [hidden]="!optSelected"> Opciones extras: </p>
       <!-- Componente y servicio -->
-      <div *ngIf="testingOptions.includes(optSelected)">
+      <div [hidden]="!testingOptions.includes(optSelected)">
         <mat-checkbox formControlName="checkTesting"> No generar archivo de testing</mat-checkbox>
         <br>
       </div>
       <!-- Componente -->
-      <div *ngIf="moduleOptions.includes(optSelected)">
+      <div [hidden]="!moduleOptions.includes(optSelected)">
         <mat-checkbox formControlName="checkModule"> Incluir en módulo</mat-checkbox>
         <br>
-        <mat-form-field appearance="outline">
-          <mat-label>Nombre del módulo</mat-label>
-          <input matInput placeholder="Nombre" formControlName="componentModule" />
-        </mat-form-field>
-        <br>
+        <div [hidden]="!generatorForm.value.checkModule">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre del módulo</mat-label>
+            <input matInput placeholder="Nombre" formControlName="componentModule"/>
+          </mat-form-field>
+        </div>
       </div>
       <!-- Módulo -->
-      <div *ngIf="routingOptions.includes(optSelected)">
+      <div [hidden]="!routingOptions.includes(optSelected)">
         <mat-checkbox formControlName="checkRouting"> Generar archivo de rutas</mat-checkbox>
         <br />
       </div>
@@ -149,6 +150,10 @@
   </div>
   <br />
 </div>
+<br>
+<p> Puedes encontrar información completa de las opciones del comando 'ng generate' en
+  la <a href="https://angular.io/cli/generate" target="_blank">documentación oficial de Angular</a>.
+</p>
 
 
 <div class="page-navigator">
