@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'generales/formularios', loadChildren: () => import('./modules/general/forms/forms.module').then(m => m.FormsModule) },
   { path: 'generales/cliente/http', loadChildren: () => import('./modules/general/http-client/http-client.module').then(m => m.HttpClientModule) },
   // MATERIALS
+  { path: 'materials/introduccion', loadChildren: () => import('./modules/materials/materials-install/materials-install.module').then(m => m.MaterialsInstallModule) },
   { path: 'materials/botones', loadChildren: () => import('./modules/materials/buttons/buttons.module').then(m => m.ButtonsModule) },
   // EXTRAS
   { path: "**", component: PageNotFoundComponent }

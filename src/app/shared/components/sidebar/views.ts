@@ -44,6 +44,11 @@ export const VIEWS: ViewInterface[] = [
     name: 'Angular materials',
     views: [
       {
+        icon: 'bookshelf',
+        name: 'Introducción',
+        href: 'materials/introduccion',
+      },
+      {
         icon: 'button-cursor',
         name: 'Botones',
         href: 'materials/botones',

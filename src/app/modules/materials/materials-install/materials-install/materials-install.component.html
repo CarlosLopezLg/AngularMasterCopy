@@ -1,1 +1,141 @@
-<p>materials-install works!</p>
+<div class="main-title">
+    <h1>Introducción a Angular Materials</h1>
+</div>
+<br />
+<p>
+    Angular Materials te da acceso a múltiples herramientas y componentes para poder diseñar
+    aplicaciones web más vistosas de manera sencillo. Materials podría ser comparado con Bootstrap.
+    También, materials realiza ciertas configuración de diseño general, como establecer la fuente
+    'Roboto' como fuente predeterminada.
+</p>
+<!-- Instalación -->
+<h2>Instalación</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+    Para instalar Angular Materials, debes usar el siguiente comando:
+</p>
+<br />
+<div class="x-limit">
+    <app-shell-layout> ng add @angular/material</app-shell-layout>
+</div>
+<br />
+<!-- Botones -->
+<h2>Botones</h2>
+<mat-divider></mat-divider>
+<br>
+<div routerLink="/materials/botones" class="large-button"> <span>Ir a botones</span> </div>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <button (click)="buttonContent='( ͡° ͜ʖ ͡°)'" mat-raised-button color="warn" style="min-width: 90px;">
+            {{buttonContent}}
+        </button>
+    </div>
+</div>
+<br>
+
+<!-- Spinners -->
+<h2>Spinners</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <mat-spinner color="warn"></mat-spinner>
+    </div>
+</div>
+<br>
+
+<!-- Progress bar -->
+<h2>Progress bar</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <br>
+    <div class="center-content">
+        <mat-progress-bar color="warn" mode="buffer"></mat-progress-bar>
+    </div>
+    <br><br>
+    <div class="center-content">
+        <mat-progress-bar color="warn" mode="indeterminate"></mat-progress-bar>
+    </div>
+</div>
+<br>
+
+<!-- Slider -->
+<h2>Slider</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <mat-slider color="warn">
+            <input matSliderThumb>
+        </mat-slider>
+    </div>
+</div>
+<br>
+
+<!-- Ripples -->
+<h2>Ripples</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <div class=" center-content square" matRipple>
+            <span style="color: white; font-size: 50px;">Click</span>
+        </div>
+    </div>
+</div>
+<br>
+
+<!-- Checkbox -->
+<h2>Checkbox</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content" style="flex-direction: column;">
+        <h4>Selecciona las tareas a hacer</h4>
+        <div>
+            <p>
+                <mat-checkbox color="warn">Suscribirse</mat-checkbox>
+            </p>
+            <p>
+                <mat-checkbox color="primary">Donar</mat-checkbox>
+            </p>
+            <p>
+                <mat-checkbox color="accent">Compartir contenido</mat-checkbox>
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+
+<!-- Radio Button -->
+<h2>Radio Button</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content" style="flex-direction: column;">
+        <label id="example-radio-group-label">Selecciona una opción</label>
+        <div>
+            <mat-radio-group class="radio-group">
+                <mat-radio-button class="radio-button" color="warn" *ngFor="let radioOption of radioOptions" [value]="radioOption">
+                    {{radioOption}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+</div>
+<br>
+
+<!-- Navigation -->
+<div class="page-navigator">
+    <button mat-raised-button class="primary-button" disabled="true">
+        <mat-icon svgIcon="chevron-left"></mat-icon>
+        Anterior
+    </button>
+    <button mat-raised-button class="primary-button" routerLink="/materials/botones" style="margin-left: 20px">
+        Siguiente
+        <mat-icon svgIcon="chevron-right"></mat-icon>
+    </button>
+</div>

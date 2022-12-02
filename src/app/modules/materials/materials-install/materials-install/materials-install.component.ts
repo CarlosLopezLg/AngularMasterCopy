@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialsInstallComponent implements OnInit {
 
+  // Botones
+  buttonContent:string = '(｡◕‿◕｡)';
+  // Radio buttons
+  radioOptions: string[] = ['Primera opción', 'Segunda opción', 'Tercera opción', 'Carlos'];
+
   constructor() { }
 
   ngOnInit(): void {
