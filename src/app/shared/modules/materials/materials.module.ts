@@ -12,13 +12,20 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatRippleModule} from '@angular/material/core';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatTableModule} from '@angular/material/table';
 
 const materialModules = [
   MatSidenavModule,
@@ -40,7 +47,15 @@ const materialModules = [
   MatProgressSpinnerModule,
   MatProgressBarModule,
   MatSliderModule,
-  MatRadioModule
+  MatRadioModule,
+  MatButtonToggleModule,
+  MatBadgeModule,
+  MatAutocompleteModule,
+  MatCardModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatTableModule
 ]
 
 @NgModule({

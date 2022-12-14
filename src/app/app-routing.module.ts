@@ -16,6 +16,8 @@ const routes: Routes = [
   // MATERIALS
   { path: 'materials/introduccion', loadChildren: () => import('./modules/materials/materials-install/materials-install.module').then(m => m.MaterialsInstallModule) },
   { path: 'materials/botones', loadChildren: () => import('./modules/materials/buttons/buttons.module').then(m => m.ButtonsModule) },
+  { path: 'materials/spinners', loadChildren: () => import('./modules/materials/spinners/spinners.module').then(m => m.SpinnersModule) },
+  { path: 'materials/progress/bar', loadChildren: () => import('./modules/materials/progress-bar/progress-bar.module').then(m => m.ProgressBarModule) },
   // EXTRAS
   { path: "**", component: PageNotFoundComponent }
 ];

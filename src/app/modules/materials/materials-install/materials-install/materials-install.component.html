@@ -21,10 +21,8 @@
 </div>
 <br />
 <!-- Botones -->
-<h2>Botones</h2>
+<h2 routerLink="/materials/botones" class="clickable">Botones</h2>
 <mat-divider></mat-divider>
-<br>
-<div routerLink="/materials/botones" class="large-button"> <span>Ir a botones</span> </div>
 <br>
 <div class="playground">
     <div class="center-content">
@@ -124,6 +122,233 @@
                 </mat-radio-button>
             </mat-radio-group>
         </div>
+    </div>
+</div>
+<br>
+
+<!-- Select -->
+<h2>Select</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content" style="flex-direction: column;">
+        <label id="example-radio-group-label">Selecciona una opción</label>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Tutoriales</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let selectOption of selectOptions" [value]="selectOption">
+                    {{selectOption}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    </div>
+</div>
+<br>
+
+<!-- Button Toggle -->
+<h2>Button Toggle</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content" style="flex-direction: column;">
+        <div>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle value=0>Lento</mat-button-toggle>
+                <mat-button-toggle value=1>Normal</mat-button-toggle>
+                <mat-button-toggle value=2>Rápido</mat-button-toggle>
+              </mat-button-toggle-group>
+        </div>
+    </div>
+</div>
+<br>
+
+<!-- Icon -->
+<h2>Icon</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <mat-icon svgIcon="account-plus" style="margin-top: 10px; color: green;"></mat-icon>
+    </div>
+</div>
+<br>
+
+<!-- Badge -->
+<h2>Badge</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <mat-icon matBadge="6" matBadgeColor="warn" svgIcon="bell" style="margin-top: 10px; color: black;"></mat-icon>
+    </div>
+</div>
+<br>
+
+<!-- Card -->
+<h2>Card</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Conejo programador</mat-card-title>
+              <mat-card-subtitle>contacto@cprogramadores.com</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image class="card-content" src="https://images.pexels.com/photos/4588455/pexels-photo-4588455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                Amo leer, mientras tomo lluvia y esucho el café. #Programando #Developer #DónenmePls
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button><mat-icon svgIcon="heart" style="color: red;"></mat-icon></button>
+              <button mat-button><mat-icon svgIcon="share-variant"></mat-icon></button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>
+<br>
+
+<!-- Autocomplete -->
+<h2>Autocomplete</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Country</mat-label>
+              <input type="text"
+                     placeholder="Elige un país"
+                     aria-label="Countries"
+                     matInput
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+    </div>
+</div>
+<br>
+
+<!-- Tooltip -->
+<h2>Tooltip</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <button mat-icon-button matTooltip="Copiar" matTooltipPosition="above" aria-label="Donación">
+            <mat-icon style="color: black;" svgIcon="clipboard-text-multiple-outline"></mat-icon>
+          </button>
+    </div>
+</div>
+<br>
+
+<!-- DatePicker -->
+<h2>DatePicker</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <mat-card class="demo-inline-calendar-card">
+            <mat-calendar [(selected)]="selected"></mat-calendar>
+        </mat-card>
+    </div>
+</div>
+<br>
+
+<!-- Divider -->
+<h2>Divider</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content" style="flex-direction: column;">
+        <p>Sección anterior</p>
+        <mat-divider style="width: 90%;"></mat-divider>
+        <br>
+        <p>Sección siguiente</p>
+    </div>
+</div>
+<br>
+
+<!-- Toolbar -->
+<h2>Toolbar</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <mat-toolbar class="color-red-3">
+            <button mat-icon-button aria-label="Toggle sidenav">
+              <mat-icon svgIcon="menu"></mat-icon>
+            </button>
+            <span style="cursor: pointer;">Guía de Angular</span>
+            <span class="spacer"></span>
+            <button mat-icon-button matTooltip="Donar :D" aria-label="Donación">
+              <mat-icon svgIcon="coffee"></mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Canal de Youtube" aria-label="Youtube">
+              <mat-icon svgIcon="youtube"></mat-icon>
+            </button>
+          </mat-toolbar>
+    </div>
+</div>
+<br>
+
+<!-- Sidenav -->
+<h2 class="clickable">Sidenav</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <button mat-raised-button color="warn" (click)="ToggleSidebar()">
+            Abrir Sidenav
+        </button>
+    </div>
+</div>
+<br>
+
+<!-- Form field -->
+<h2 class="clickable">Form field</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content" style="flex-direction: column;">
+        <mat-form-field appearance="fill">
+            <mat-label>Input</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">Opción 1</mat-option>
+              <mat-option value="two">Opción 2</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+    </div>
+</div>
+<br>
+
+<!-- Snackbar -->
+<h2 class="clickable">Snackbar</h2>
+<mat-divider></mat-divider>
+<br>
+<div class="playground">
+    <div class="center-content">
+        <button mat-raised-button color="warn" (click)="runSnackbar()">
+            Abrir Snackbar
+        </button>
     </div>
 </div>
 <br>

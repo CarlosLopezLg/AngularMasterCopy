@@ -53,6 +53,16 @@ export const VIEWS: ViewInterface[] = [
         name: 'Botones',
         href: 'materials/botones',
       },
+      {
+        icon: 'checkbox-blank-circle-outline',
+        name: 'Spinners',
+        href: 'materials/spinners',
+      },
+      {
+        icon: 'checkbox-blank-outline',
+        name: 'Progress Bar',
+        href: 'materials/progress/bar',
+      },
     ],
   },
   /*

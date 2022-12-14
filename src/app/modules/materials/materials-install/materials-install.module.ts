@@ -5,7 +5,7 @@ import { MaterialsInstallRoutingModule } from './materials-install-routing.modul
 import { MaterialsInstallComponent } from './materials-install/materials-install.component';
 import { MaterialsModule } from 'src/app/shared/modules/materials/materials.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     MaterialsInstallRoutingModule,
     SharedModule,
     MaterialsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MaterialsInstallModule { }

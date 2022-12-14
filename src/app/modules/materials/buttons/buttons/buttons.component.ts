@@ -10,7 +10,7 @@ export class ButtonsComponent implements OnInit {
   importString = `import {MatButtonModule} from '@angular/material/button';`;
   // Button
   buttonHtmlContent = `
-  <button mat-button style="background-color: rgb(137, 208, 239);">Primary</button>
+  <button mat-button style="background-color: rgb(137, 208, 239);">Enviar</button>
   `;
   // Buttons Group
   buttonsGroupHtmlContent = `

@@ -1,27 +1,5 @@
-.large-button {
-    width: 100%;
-    min-height: 30px;
-    border-radius: 5px 5px 5px 5px;
-    background-color: var(--color-red-3);
+.clickable {
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    transition: all 0.25s ease;
-    -webkit-transition: all 0.25s ease;
-    -moz-transition: all 0.25s ease;
-}
-
-.large-button:hover {
-    background-color: var(--color-red-5);
-}
-
-.large-button span {
-    font-size: 2vw;
-    text-align: center;
-    color: white;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 @media screen and (max-width: 601px) {
@@ -57,3 +35,33 @@ mat-slider {
   .radio-group  .radio-button {
     margin: 5px;
   }
+
+  /*card*/
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://images.pexels.com/photos/4001296/pexels-photo-4001296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+  }
+
+  .card-content{
+    background-size: cover;
+    object-fit: contain;
+    height: 400px;
+    background-color: whitesmoke;
+  }
+
+  /*Toolbar*/
+  mat-icon {
+    color: white;
+}
+
+mat-toolbar {
+    height: 65px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
