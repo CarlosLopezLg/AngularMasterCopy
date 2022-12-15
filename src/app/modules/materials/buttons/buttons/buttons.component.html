@@ -107,6 +107,33 @@
   <b>Nota 2:</b> Este ejemplo incluye otros componentes de Angular Materials como
   '<span><</span>mat-divider>', del cual se hablará más adelante.
 </p>
+<!-- Parámetros -->
+<br>
+<h2>Parámetros</h2>
+<mat-divider></mat-divider>
+<br />
+
+<table mat-table [dataSource]="dataSource" style="width: 100%">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Tipo de dato </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="desc">
+    <th mat-header-cell *matHeaderCellDef> Descripción </th>
+    <td mat-cell *matCellDef="let element"> {{element.desc}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
 
 <!-- Navigation -->
 <div class="page-navigator">

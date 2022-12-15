@@ -63,6 +63,11 @@ export const VIEWS: ViewInterface[] = [
         name: 'Progress Bar',
         href: 'materials/progress/bar',
       },
+      {
+        icon: 'checkbox-blank-outline',
+        name: 'Slider',
+        href: 'materials/slider',
+      },
     ],
   },
   /*

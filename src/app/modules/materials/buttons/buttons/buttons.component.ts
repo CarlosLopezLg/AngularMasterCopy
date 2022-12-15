@@ -75,6 +75,15 @@ export class ButtonsComponent implements OnInit {
   }
 `;
 
+// Parameteres Table
+dataSource: any[] = [
+  {name: 'color', type: 'ThemePalette', desc: 'Cambia el color principal, en base a la paleta de colores de Angular Materials.'},
+  {name: 'disableRipple', type: 'boolean', desc: 'Desactiva la animación Ripple al ser presionado.'},
+  {name: 'disabled', type: 'boolean', desc: 'Habilita o deshabilita el botón.'},
+];
+
+displayedColumns: string[] = ['name', 'type', 'desc'];
+
   constructor() { }
 
   ngOnInit(): void {
