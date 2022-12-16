@@ -1,3 +1,24 @@
+/*Button*/
+.main-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-button-container button{
+    height: 60px;
+    width: 80%;
+    font-size: 30px;
+    background-color: var(--color-red-3);
+}
+
+.main-button-container button:hover{
+    background-color: var(--color-red-5);
+}
+
+/*Selection*/
 .primary-selection {
     width: 100%;
     height: 120px; /*60px*/
@@ -11,6 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: brightness(1);
     font-size: 3vw;
     text-shadow: var(--text-border-black);
     opacity: 0.9;
@@ -29,4 +51,32 @@
     opacity: 1;
     font-size: 4vw;
     height: 170px; /*70px*/
+    filter: brightness(1.3);
+}
+
+/*Destacados*/
+
+.dest-container {
+    width: 100%;
+    min-height: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px 5px 5px 5px;
+    background-color: var(--color-red-2);
+    cursor: pointer;
+    /*Flex*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Font*/
+    font-size: 25px;
+    color: white;
+}
+
+.dest-container mat-icon{
+    margin-right: 5px;
+}
+
+.dest-container:hover {
+    background-color: var(--color-red-4);
 }

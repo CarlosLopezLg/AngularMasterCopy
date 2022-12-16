@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EmitterService } from './shared/services/emitter-service.service';
 import { IconService } from './shared/services/icon.service';
 import { LocalStorageService } from './shared/services/local-storage.service';
@@ -17,7 +18,8 @@ export class AppComponent {
   constructor (
     private iconSvc: IconService,
     private emitterService: EmitterService,
-    private lStorage: LocalStorageService
+    private lStorage: LocalStorageService,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
@@ -36,5 +38,10 @@ export class AppComponent {
 
   onActivate():void {
     document.body.scrollTop = 0;
+    // Navegar a sección específica de html
+    this.route.fragment.subscribe(f => {
+      const element = document.querySelector("#" + f)
+      if (element) element.scrollIntoView()
+    })
   }
 }

@@ -3,18 +3,69 @@
   </div>
   <br />
   <p>
-    A continuación se presentará una introducción a los Guards en Angular.
+    A continuación se presentará una introducción a Lazy Load o carga perezosa.
   </p>
   <br />
   <!-- Qué es -->
-<h2>¿Qué son los Guards?</h2>
+<h2>¿Qué es Lazy Load?</h2>
 <mat-divider></mat-divider>
 <br />
 <p>
-    ¿Recuerdas haber intentado ingresar a una página en la que antes de poder ver una sola 
-    palabra del contenido, esta te redirige a una pantalla para iniciar sesión? Esto se puede
-    lograr en Angular gracias al uso de los Guards.
+    Al momento de desarrollar una aplicación web, es posible que quieras crear varias
+    vistas, en este caso, componentes, los cuales tu navegador debe cargar. A partir de 
+    cierto tamaño del proyecto, a los navegadores se les haría imposible, o al menos, muy
+    lento cargar todos los recursos al mismo tiempo. Es aquí en donde entra Lazy load o carga 
+    perezosa, la cual consiste en cargar solo aquellos módulos que sea estrictamente necesario su uso,
+    evitando así cargar todo aquello que no sea estrictamente necesario.
 </p>
+<p>
+    Por ejemplo, en un Login, no es necesario cargar la información de la aplicación, ya que 
+    aun ni se tiene acceso a ella. por lo que no tendría sentido cargarla. Del mismo modo, una vez
+    iniciada sesión, el módulo del Login ya no es requerido, y tampoco es necesario cargarlo cada vez
+    que navegues en tu página.
+</p>
+
+  <!-- Implementación -->
+  <h2>Implementación</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+      Para poder cargar componentes de forma perezosa, se requiere que estos estén vinculados
+      a un módulo, por ende, el primer paso debe ser crar un módulo. Es importante que este módulo
+      cuenta con un módulo de rutas, como se ve en el siguiente comando:
+  </p>
+  <br>
+  <div class="x-limit">
+    <app-shell-layout> ng generate module lazyexample --routing </app-shell-layout>
+  </div>
+  <br>
+  <p>
+    Lo siguiente que tienes que hacer, es crear el componente que se cargará y se agregará
+    al archivo de rutas recién creado.
+  </p>
+  <br>
+  <div class="x-limit">
+    <app-shell-layout> ng generate component mycomponent --module lazyexample </app-shell-layout>
+  </div>
+  <br>
+  <p>lazyexample-routing.module.ts</p>
+  <div class="code-screen">{{ routerCode }}</div>
+  <br>
+  <p>
+    Nota como en el path se encuentra con una cadena vacía, esto debido a que la ruta
+    para acceder al componente se deberá indicar en el archivo "app-routing.module.ts".
+  </p>
+  <p>
+    app-routing.module.ts
+  </p>
+  <br>
+  <div class="code-screen">{{ approuterCode }}</div>
+  <br>
+  <p>
+    Aquí podemos ver como al ingresar la ruta "example", se manda a cargar el módulo "Lazyexample",
+    el cual carga en automático el componente "mycomponent".
+  </p>
+
 
   <!-- Navigation -->
   <div class="page-navigator">

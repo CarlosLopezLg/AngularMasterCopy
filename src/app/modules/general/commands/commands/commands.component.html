@@ -6,150 +6,170 @@
   A continuación se presentará un introducción al archivo de rutas de Angular.
 </p>
 
-<h2>Instalar CLI de Angular</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="x-limit">
-  <app-shell-layout> npm install -g @angular/cli</app-shell-layout>
-</div>
+<section id="instalación">
+  <h2>Instalar CLI de Angular</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="x-limit">
+    <app-shell-layout> npm install -g @angular/cli</app-shell-layout>
+  </div>
+</section>
 
-<h2>Crear un proyecto nuevo</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="x-limit">
-  <app-shell-layout> ng new my-first-project</app-shell-layout>
-</div>
-<br />
-<p>
-  En donde "my-first-project" será el lugar en donde se insertará el
-  <b>nombre del proyecto</b>.
-</p>
+<section id="proyecto">
+  <h2>Crear un proyecto nuevo</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="x-limit">
+    <app-shell-layout> ng new my-first-project</app-shell-layout>
+  </div>
+  <br />
+  <p>
+    En donde "my-first-project" será el lugar en donde se insertará el
+    <b>nombre del proyecto</b>.
+  </p>
+</section>
 
-<h2>Correr el proyecto en el navegador</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="x-limit">
-  <app-shell-layout> ng serve </app-shell-layout>
-</div>
-<p>Banderas:</p>
-<p><b>-o</b>: Abrir el navegador automáticamente</p>
+<section id="correr-servidor">
+  <h2>Correr el proyecto en el navegador</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="x-limit">
+    <app-shell-layout> ng serve </app-shell-layout>
+  </div>
+  <p>Banderas:</p>
+  <p><b>-o</b>: Abrir el navegador automáticamente</p>
+</section>
 
-<h2>Compilar proyecto</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="x-limit">
-  <app-shell-layout> ng build --configuration production</app-shell-layout>
-</div>
-<br />
-<p>
-  Con este comando, preparas los archivos para subir a producción la aplicación.
-  También pasarán de Typescript a Javascript los archivos.
-</p>
+<section id="compilar">
+  <h2>Compilar proyecto</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="x-limit">
+    <app-shell-layout> ng build --configuration production</app-shell-layout>
+  </div>
+  <br />
+  <p>
+    Con este comando, preparas los archivos para subir a producción la aplicación.
+    También pasarán de Typescript a Javascript los archivos.
+  </p>
+</section>
 
-<h2>Crear componentes</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="x-limit">
-  <app-shell-layout>
-    <span class="shell-note"> //Comando completo</span> <br />
-    ng generate component component-name<br />
-    <span class="shell-note"> //Método abreviado</span> <br />
-    ng g c component-name
-  </app-shell-layout>
-</div>
-<p>Banderas:</p>
-<p><b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
-<p><b>--module</b>: Selecciona el módulo a declarar el componente.</p>
+<section id="componentes">
+  <h2>Crear componentes</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="x-limit">
+    <app-shell-layout>
+      <span class="shell-note"> //Comando completo</span> <br />
+      ng generate component component-name<br />
+      <span class="shell-note"> //Método abreviado</span> <br />
+      ng g c component-name
+    </app-shell-layout>
+  </div>
+  <p>Banderas:</p>
+  <p><b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
+  <p><b>--module</b>: Selecciona el módulo a declarar el componente.</p>
+</section>
 
-<h2>Crear servicio</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="x-limit">
-  <app-shell-layout> ng generate service service-name</app-shell-layout>
-</div>
-<p>Banderas:</p>
-<p><b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
-<h2>Crear módulo</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="x-limit">
-  <app-shell-layout> ng generate module module-name</app-shell-layout>
-</div>
-<p>Banderas:</p>
-<p><b>--routing</b>: Crea archivo de enrutamiento</p>
+<section id="servicio">
+  <h2>Crear servicio</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="x-limit">
+    <app-shell-layout> ng generate service service-name</app-shell-layout>
+  </div>
+  <p>Banderas:</p>
+  <p><b>--skip-tests</b>: Omite la creación del archivo de pruebas ".spec.ts"</p>
+</section>
 
-<h2>Crear guard</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="x-limit">
-  <app-shell-layout> ng generate guard guard-name</app-shell-layout>
-</div>
+<section id="módulo">
+  <h2>Crear módulo</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="x-limit">
+    <app-shell-layout> ng generate module module-name</app-shell-layout>
+  </div>
+  <p>Banderas:</p>
+  <p><b>--routing</b>: Crea archivo de enrutamiento</p>
+</section>
+
+<section id="guard">
+  <h2>Crear guard</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="x-limit">
+    <app-shell-layout> ng generate guard guard-name</app-shell-layout>
+  </div>
+</section>
 
 <br />
 <!-- GENERADOR -->
-<h2>Generar comando</h2>
-<mat-divider></mat-divider>
-<br />
-<div class="demostration-container">
-  <p><b>Generador:</b></p>
-
-  <div class="playground demo-content">
-    <form [formGroup]="generatorForm">
-
-      <p>Selecciona un elemento a generar:</p>
-      <mat-form-field appearance="fill">
-        <mat-label>Elemento a generar</mat-label>
-        <mat-select formControlName="option" (selectionChange)="optSelected = $event.value.value;" >
-          <mat-option *ngFor="let option of options" [value]="option">
-            {{option.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <p> Selecciona un nombre:</p>
-      <mat-form-field appearance="outline">
-        <mat-label>Nombre</mat-label>
-        <input matInput placeholder="Nombre" formControlName="name" />
-      </mat-form-field>
-      <p [hidden]="!optSelected"> Opciones extras: </p>
-      <!-- Componente y servicio -->
-      <div [hidden]="!testingOptions.includes(optSelected)">
-        <mat-checkbox formControlName="checkTesting"> No generar archivo de testing</mat-checkbox>
-        <br>
-      </div>
-      <!-- Componente -->
-      <div [hidden]="!moduleOptions.includes(optSelected)">
-        <mat-checkbox formControlName="checkModule"> Incluir en módulo</mat-checkbox>
-        <br>
-        <div [hidden]="!generatorForm.value.checkModule">
-          <mat-form-field appearance="outline">
-            <mat-label>Nombre del módulo</mat-label>
-            <input matInput placeholder="Nombre" formControlName="componentModule"/>
-          </mat-form-field>
+<section id="generador">
+  <h2>Generar comando</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="demostration-container">
+    <p><b>Generador:</b></p>
+  
+    <div class="playground demo-content">
+      <form [formGroup]="generatorForm">
+  
+        <p>Selecciona un elemento a generar:</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Elemento a generar</mat-label>
+          <mat-select formControlName="option" (selectionChange)="optSelected = $event.value.value;" >
+            <mat-option *ngFor="let option of options" [value]="option">
+              {{option.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <p> Selecciona un nombre:</p>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre" formControlName="name" />
+        </mat-form-field>
+        <p [hidden]="!optSelected"> Opciones extras: </p>
+        <!-- Componente y servicio -->
+        <div [hidden]="!testingOptions.includes(optSelected)">
+          <mat-checkbox formControlName="checkTesting"> No generar archivo de testing</mat-checkbox>
+          <br>
         </div>
-      </div>
-      <!-- Módulo -->
-      <div [hidden]="!routingOptions.includes(optSelected)">
-        <mat-checkbox formControlName="checkRouting"> Generar archivo de rutas</mat-checkbox>
-        <br />
-      </div>
-      <div class="center-content">
-        <button 
-        (click)="generateCommand()" 
-        mat-raised-button class="primary-button"
-        [disabled]="generatorForm.invalid">Generar</button>
-      </div>
-    </form>
-  </div>
-  <br />
-  <div [hidden]="!isGenerated">
-    <p>Resultado:</p>
-    <div class="x-limit">
-      <app-shell-layout> {{ generatedCommand }}</app-shell-layout>
+        <!-- Componente -->
+        <div [hidden]="!moduleOptions.includes(optSelected)">
+          <mat-checkbox formControlName="checkModule"> Incluir en módulo</mat-checkbox>
+          <br>
+          <div [hidden]="!generatorForm.value.checkModule">
+            <mat-form-field appearance="outline">
+              <mat-label>Nombre del módulo</mat-label>
+              <input matInput placeholder="Nombre" formControlName="componentModule"/>
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- Módulo -->
+        <div [hidden]="!routingOptions.includes(optSelected)">
+          <mat-checkbox formControlName="checkRouting"> Generar archivo de rutas</mat-checkbox>
+          <br />
+        </div>
+        <div class="center-content">
+          <button 
+          (click)="generateCommand()" 
+          mat-raised-button class="primary-button"
+          [disabled]="generatorForm.invalid">Generar</button>
+        </div>
+      </form>
     </div>
+    <br />
+    <div [hidden]="!isGenerated">
+      <p>Resultado:</p>
+      <div class="x-limit">
+        <app-shell-layout> {{ generatedCommand }}</app-shell-layout>
+      </div>
+    </div>
+    <br />
   </div>
-  <br />
-</div>
+</section>
+
 <br>
 <p> Puedes encontrar información completa de las opciones del comando 'ng generate' en
   la <a href="https://angular.io/cli/generate" target="_blank">documentación oficial de Angular</a>.
