@@ -95,29 +95,36 @@ export const VIEWS: ViewInterface[] = [
       },
     ],
   },
+  */
   //Avanzado
   {
-    icon: 'head-flash',
-    name: 'Avanzado',
+    icon: 'dumbbell',
+    name: 'Intermedio',
     views: [
       {
         icon: 'lock',
         name: 'Guards',
-        href: 'avanzado/guards',
+        href: 'intermedio/guards',
       },
       {
         icon: 'monitor-arrow-down-variant',
         name: 'Lazy load',
-        href: 'avanzado/lazyload',
+        href: 'intermedio/lazy/load',
       },
       {
-        icon: 'monitor-arrow-down-variant',
+        icon: 'exclamation-thick',
         name: 'Event Emitter',
-        href: 'avanzado/event-emitter',
+        href: 'intermedio/event-emitter',
+      },
+      {
+        icon: 'shield-key-outline',
+        name: 'Interceptor',
+        href: 'intermedio/interceptor',
       },
     ],
   },
   // Librerías
+  /*
   {
     icon: 'file-account',
     name: 'Librerías',

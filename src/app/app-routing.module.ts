@@ -19,6 +19,9 @@ const routes: Routes = [
   { path: 'materials/spinners', loadChildren: () => import('./modules/materials/spinners/spinners.module').then(m => m.SpinnersModule) },
   { path: 'materials/progress/bar', loadChildren: () => import('./modules/materials/progress-bar/progress-bar.module').then(m => m.ProgressBarModule) },
   { path: 'materials/slider', loadChildren: () => import('./modules/materials/slider/slider.module').then(m => m.SliderModule) },
+  // INTERMEDIO
+  { path: 'intermedio/guards', loadChildren: () => import('./modules/intermediate/guards/guards.module').then(m => m.GuardsModule) },
+  { path: 'intermedio/lazy/load', loadChildren: () => import('./modules/intermediate/lazy-load/lazy-load.module').then(m => m.LazyLoadModule) },
   // EXTRAS
   { path: "**", component: PageNotFoundComponent }
 ];

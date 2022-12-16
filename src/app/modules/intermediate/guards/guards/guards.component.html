@@ -1,0 +1,148 @@
+<div class="main-title">
+    <h1>Guards</h1>
+  </div>
+  <br />
+  <p>
+    A continuación se presentará una introducción a los Guards en Angular.
+  </p>
+  <br />
+  <!-- Qué es -->
+<h2>¿Qué son los Guards?</h2>
+<mat-divider></mat-divider>
+<br />
+<p>
+    ¿Recuerdas haber intentado ingresar a una página en la que antes de poder ver una sola 
+    palabra del contenido, esta te redirige a una pantalla para iniciar sesión? Esto se puede
+    lograr en Angular gracias al uso de los Guards.
+</p>
+<p>
+  Un guard en Angular, se manda a llamar cada vez que se intenta cargar o descargar un componente,
+  usualmente a causa de navegar por la página con el uso de las rutas. Gracias a los guards, 
+  el sistema tiene la oportunidad de denegar o permitir la carga de un componente antes de que
+  el usuario pueda interactuar con él.
+</p>
+<p>
+    Para crear un Guard, debes utilizar el siguiente comando:
+</p>
+
+<div class="x-limit">
+    <app-shell-layout> ng generate guard guard-name</app-shell-layout>
+  </div>
+
+  <!-- Tipos -->
+  <h2>Tipos de Guards</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+      Al crear un Guard, la consola te preguntará qué tipo de Guard deseas crear, desplegando
+      las siguientes opciones:
+  </p>
+
+  <p><b> CanActivate </b></p>
+  <p> Se manda a llamar antes de acceder a un componente, en el cual puedes permitir o denegar el acceso del usuario.</p>
+  <br>
+  <p><b> CanActivateChild </b></p>
+  <p> Similar al CanActivate, el CanActivateChild cumple la misma función, esta vez orientada a aquellos componentes hijos de una ruta padre.</p>
+  <br>
+  <p><b> CanLoad </b></p>
+  <p> El Guard CanLoad, va un paso anterior al CanActivate, evitando que se cargue el componente mediante
+    el uso de <a routerLink="/intermedio/lazy/load">LazyLoad</a>, siendo útil para no cargar recursos innecesarios.
+  </p>
+  <br>
+  <p><b> CanDeactivate </b></p>
+  <p> Este Guard cumple la función inversa a los tres previos, esta vez impidiendo la salida de un componente en base a una condición.</p>
+  <br>
+
+  <!-- Tipos -->
+  <h2>Ejemplo con CanDeactivate</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+      Activa el switch para habilitar el Guard "CanDeactivate", y luego intenta navegar a otra página
+      utilizando la barra de navegación en el lateral izquierdo.
+  </p>
+
+  <div class="spotlight">
+    <mat-slide-toggle [(ngModel)]="enableGuard" color="warn">Activar guard</mat-slide-toggle>
+    <p>{{enableGuard ? 'Guard activado, no puedes salir.' : 'Guard desactivado, eres libre de irte.'}}</p>
+  </div>
+  <br>
+
+  <p><b>Guard</b></p>
+  guard-example.guard.ts
+  <div class="code-screen">{{ guardCode }}</div>
+  <br>
+  <p> En esta código, el Guard espera una respuesta booleana para determinar si el componente
+    tiene permiso de desactivarse o no, siendo "true", permiso otorgado para salir, y "false", permiso denegado.
+  </p>
+  <p>
+    En los valores de entrada del Guard, notarás uno llamado "component: CanComponentDeactivate", el cual hace referencia
+    al componente que se desea ser desativado.
+  </p>
+  <p>
+    Como buena práctica, se debe de crear una interfaz, en este caso llamada "CanComponentDeactivate", la cual
+    indica que el componente a descargar debe contar con un método llamado "canDeactivate", el cual debe
+    devolver como respuesta un observable, una promesa o un valor booleano.
+  </p>
+  <p>
+    Por último, nota como en el return del guard hay una operación booleana, que verifica que el componente tenga
+    el método "canDeactivate" para posteriormente ejecutarlo, o en su defecto, retornar un true en caso de no
+    existir dicho método.
+  </p>
+  <br>
+
+  <p><b>Módulo (en donde se encuentra el componente)</b></p>
+  example.module.ts
+  <div class="code-screen">{{ moduleCode }}</div>
+  <br>
+  <p>En esta parte, lo único que tienes que verificar es de dar de alta el Guard dentro
+    del arreglo "providers".
+  </p>
+  <br>
+
+  <p><b>Módulo de rutas (en donde se encuentra el componente)</b></p>
+  example-routing.module.ts
+  <div class="code-screen">{{ routerCode }}</div>
+  <br>
+  <p> En esta parte, es en donde indicarás qué componentes deseas que cuenten con el o los Guards creados,
+    siendo incluídos dentro de un arreglo en la propiedad llamada "canDeactivate" en el arreglo de rutas.
+  </p>
+  <br>
+
+  <p><b>Componente (a desactivar)</b></p>
+  mycomponent.ts
+  <div class="code-screen">{{ componentCode }}</div>
+  <br>
+  <p>¿Recuerdas la interfaz creada en el Guard? Dentro de este componente deberás
+    incluir el método definido ahí, en este caso, el método "canDeactivate".
+  </p>
+  <p>
+    En este ejemplo, nuevamente se presenta una operación ternaria, en la que si el valor
+    "enableGuard" es verdadero, se le solicitará al usuario confirmar la salida mediante un 
+    window.confirm, y en caso de que la variable "enableGuard" sea falsa, se retornará directamente
+    un true. Recuerda que el evento window.confirm retorna un true o false segun la respuesta elegida
+    por el usuario.
+  </p>
+  <p>
+    El true o false devuelto, será recibido por el Guard, para decidir si el componente tiene
+    permiso de ser desativado o no.
+  </p>
+  <p>
+    Puedes tomar como referencia la variable enableGuard para decidir si quieres aplicar el guard o no,
+    por ejemplo, en un formulario en el que no hayas guardado cambios, puedes habilitar el guard,
+    pero cuando no se haya identificado algun cambio, no hay necesidad de preguntar si el usuario
+    desea salir.
+  </p>
+
+
+  <!-- Navigation -->
+  <div class="page-navigator">
+    <button  disabled="" mat-raised-button class="primary-button">
+      <mat-icon svgIcon="chevron-left"></mat-icon>
+      Anterior
+    </button>
+    <button mat-raised-button class="primary-button" routerLink="/intermedio/lazy/load" style="margin-left: 20px">
+      Siguiente
+      <mat-icon svgIcon="chevron-right"></mat-icon>
+    </button>
+  </div>

@@ -12,38 +12,51 @@ export class SliderComponent implements OnInit {
   <mat-slider>
     <input matSliderThumb>
   </mat-slider>`;
-  rangeHtml:string = `
-  <mat-slider min="200" max="500">
-    <input value="300" matSliderStartThumb>
-    <input value="400" matSliderEndThumb>
-  </mat-slider>`;
+  verticalHtml:string = `
+  <mat-slider vertical="true" color="warn">
+    <input matSliderThumb>
+  </mat-slider>
+  `;
   variantsHtml:string = `
-    <p>Buffer:</p>
-    <mat-progress-bar mode="buffer"></mat-progress-bar>
-    <br />
-    <p>Query:</p>
-    <mat-progress-bar mode="query" color="warn"></mat-progress-bar>
-    <br />
+  <mat-slider color="primary" invert="true">
+    <input matSliderThumb>
+  </mat-slider>
+  <mat-slider vertical="true" color="warn" invert="true">
+    <input matSliderThumb>
+  </mat-slider>
   `;
 
-  bufferVarHtml:string = `
-    <p>Buffer:</p>
-    <mat-progress-bar mode="buffer"></mat-progress-bar>
-    <br />
-    <p>Query:</p>
-    <mat-progress-bar mode="query" color="warn"></mat-progress-bar>
-    <br />
+  sliderVarHtml:string = `
+  <mat-slider min="10" max="20" value="15" #slider>
+    <input matSliderThumb>
+  </mat-slider>
+  <p>{{slider.value}}</p>
   `;
 
-  bufferVal:number = 70;
-  progressVal:number = 40;
+  stepsHtml:string = `
+  <mat-slider 
+    color="warn"
+    min="0" 
+    max="100" 
+    value="50" 
+    step="10" 
+    #sliderwsteps 
+    style="width: 100%;">
+      <input matSliderThumb>
+  </mat-slider>
+  <p>{{sliderwsteps.value}}</p>
+  `;
 
   // Parameteres Table
   dataSource: any[] = [
     {name: 'color', type: 'ThemePalette', desc: 'Cambia el color principal, en base a la paleta de colores de Angular Materials.'},
-    {name: 'mode', type: 'string', desc: 'Determina el modo de funcionar. Valores posibles: ["determinate" (default), "indeterminate", "buffer", "query"]'},
-    {name: 'value', type: 'number', desc: 'Determina el valor de la barra. Debe ser un valor del 1 al 100.'},
-    {name: 'bufferValue', type: 'number', desc: 'Determina el valor del buffer de la barra. Debe ser un valor del 1 al 100.'},
+    {name: 'disabled', type: 'boolean', desc: 'Habilita o deshabilita el componente.'},
+    {name: 'value', type: 'number', desc: 'Determina el valor del slider.'},
+    {name: 'max', type: 'number', desc: 'Determina el valor máximo del slider.'},
+    {name: 'min', type: 'number', desc: 'Determina el valor mínimo del slider.'},
+    {name: 'step', type: 'number', desc: 'Determina el valor de cambio.'},
+    {name: 'invert', type: 'boolean', desc: 'Invierte la dirección del slider.'},
+    {name: 'vertical', type: 'boolean', desc: 'Rota el slider de forma vertical.'},
   ];
 
   displayedColumns: string[] = ['name', 'type', 'desc'];

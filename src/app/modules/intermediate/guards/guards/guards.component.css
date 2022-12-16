@@ -1,0 +1,13 @@
+.spotlight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding: 15px;
+}
+
+.spotlight mat-slide-toggle{
+    transform: scale(5);
+    margin: 60px;
+}

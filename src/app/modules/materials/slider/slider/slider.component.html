@@ -38,39 +38,38 @@
   <br />
   
   <!--  Range Slider -->
-  <h2>Slider con rango</h2>
+  <h2>Slider vertical</h2>
   <mat-divider></mat-divider>
   <br />
   <div class="demostration-container">
     <p><b>Ejemplo:</b></p>
   
     <div class="playground demo-content centerSection">
-        <mat-slider min="200" max="500">
-            <input value="300" matSliderStartThumb>
-            <input value="400" matSliderEndThumb>
+        <mat-slider vertical="true" color="warn">
+            <input matSliderThumb>
         </mat-slider>
     </div>
     <p><b>Código:</b></p>
     <div class="playground">
-      <app-example-code [htmlContent]="rangeHtml"></app-example-code>
+      <app-example-code [htmlContent]="verticalHtml"></app-example-code>
     </div>
   </div>
   <br />
   
-  <!--  Otras variantes -->
-  <h2>Otras variantes</h2>
+  <!--  Slider invertido -->
+  <h2>Slider invertido</h2>
   <mat-divider></mat-divider>
   <br />
   <div class="demostration-container">
     <p><b>Ejemplo:</b></p>
   
     <div class="playground demo-content centerSection">
-      <p>Buffer:</p>
-      <mat-progress-bar mode="buffer"></mat-progress-bar>
-      <br />
-      <p>Query:</p>
-      <mat-progress-bar mode="query" color="warn"></mat-progress-bar>
-      <br />
+        <mat-slider color="primary" invert="true">
+            <input matSliderThumb>
+        </mat-slider>
+        <mat-slider vertical="true" color="warn" invert="true">
+            <input matSliderThumb>
+        </mat-slider>
     </div>
     <p><b>Código:</b></p>
     <div class="playground">
@@ -79,19 +78,49 @@
   </div>
   <br />
   
-  <!--  Valor del buffer -->
-  <h2>Valor del buffer</h2>
+  <!--  Valor del slider -->
+  <h2>Valor del slider</h2>
   <mat-divider></mat-divider>
   <br />
   <div class="demostration-container">
     <p><b>Ejemplo:</b></p>
   
     <div class="playground demo-content centerSection">
-      <mat-progress-bar mode="buffer" [value]="progressVal" [bufferValue]='bufferVal'></mat-progress-bar>
+        <mat-slider min="10" max="20" value="15" #slider>
+            <input matSliderThumb>
+        </mat-slider>
+        <p>{{slider.value}}</p>
     </div>
     <p><b>Código:</b></p>
     <div class="playground">
-      <app-example-code [htmlContent]="bufferVarHtml"></app-example-code>
+      <app-example-code [htmlContent]="sliderVarHtml"></app-example-code>
+    </div>
+  </div>
+  <br />
+
+  <!--  Steps -->
+  <h2>Steps</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+  
+    <div class="playground demo-content centerSection">
+        <mat-slider 
+        color="warn"
+        min="0" 
+        max="100" 
+        value="50" 
+        step="10" 
+        #sliderwsteps 
+        style="width: 100%;">
+            <input matSliderThumb>
+        </mat-slider>
+        <p>{{sliderwsteps.value}}</p>
+    </div>
+    <p><b>Código:</b></p>
+    <div class="playground">
+      <app-example-code [htmlContent]="stepsHtml"></app-example-code>
     </div>
   </div>
   <br />
@@ -125,7 +154,7 @@
   <!-- Navigation -->
   <div class="page-navigator">
     <button
-      routerLink="/materials/spinners"
+      routerLink="/materials/progress/bar"
       mat-raised-button
       class="primary-button"
     >

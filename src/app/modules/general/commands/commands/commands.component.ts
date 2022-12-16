@@ -55,7 +55,7 @@ export class CommandsComponent implements OnInit {
     }
   ]
 
-  testingOptions = [1,3,5,7,8];
+  testingOptions = [1,3,4,5,7,8];
   moduleOptions = [1,2,4,8];
   routingOptions = [2];
 

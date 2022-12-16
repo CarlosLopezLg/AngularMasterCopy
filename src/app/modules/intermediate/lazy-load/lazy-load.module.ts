@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SliderRoutingModule } from './slider-routing.module';
-import { SliderComponent } from './slider/slider.component';
+import { LazyLoadRoutingModule } from './lazy-load-routing.module';
+import { LazyLoadComponent } from './lazy-load/lazy-load.component';
 import { MaterialsModule } from 'src/app/shared/modules/materials/materials.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    SliderComponent
+    LazyLoadComponent
   ],
   imports: [
     CommonModule,
-    SliderRoutingModule,
+    LazyLoadRoutingModule,
     SharedModule,
-    MaterialsModule,
-    FormsModule
+    MaterialsModule
   ]
 })
-export class SliderModule { }
+export class LazyLoadModule { }

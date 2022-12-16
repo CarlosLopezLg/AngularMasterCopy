@@ -3,5 +3,6 @@ export const IconExtra = [
     'timeline-question',
     'window-shutter-cog',
     'list-box-outline',
-    'rabbit'
+    'rabbit',
+    'exclamation-thick'
 ]

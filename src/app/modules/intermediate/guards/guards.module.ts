@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SliderRoutingModule } from './slider-routing.module';
-import { SliderComponent } from './slider/slider.component';
+import { GuardsRoutingModule } from './guards-routing.module';
+import { GuardsComponent } from './guards/guards.component';
 import { MaterialsModule } from 'src/app/shared/modules/materials/materials.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { GuardExampleGuard } from 'src/app/guards/guard-example.guard';
 import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    SliderComponent
+    GuardsComponent
   ],
   imports: [
     CommonModule,
-    SliderRoutingModule,
+    GuardsRoutingModule,
     SharedModule,
     MaterialsModule,
     FormsModule
+  ],
+  providers: [
+    GuardExampleGuard
   ]
 })
-export class SliderModule { }
+export class GuardsModule { }
