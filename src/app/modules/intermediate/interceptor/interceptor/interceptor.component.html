@@ -1,0 +1,96 @@
+<div class="main-title">
+  <h1>Interceptor</h1>
+</div>
+<br />
+<p>A continuación se presentará una introducción al interceptor en Angular.</p>
+<br />
+<section id="qué-es">
+  <!-- Qué es -->
+  <h2>¿Qué son los Interceptors?</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    Como su nombre lo dice, un Interceptor "intercepta" (obviamente) una
+    petición HTTP emitida o recibida. Gracias al Interceptor, se pueden hacer
+    distintas acciones con la petición antes de que se mande o reciba el
+    contenido, modificando la información, notificando a servicios o modificando
+    los headers de la petición, como algunos ejemplos.
+  </p>
+</section>
+<br />
+<section id="utilidad">
+  <!-- Utilidad -->
+  <h2>¿Para qué sirve?</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    Algunas de las aplicaciones más comunes del interceptor, son las siguientes:
+  </p>
+  <br>
+  <p><b>Concatenar un token de autenticación</b></p>
+  <p> Algunas APIs requieren de un token de autenticación antes de procesar tu petición, y
+    concatenar el token en absolutamente cada petición que mandes, puede ser una tarea muy
+    repetitiva y poco práctica, pero con ayuda de un interceptor, podrás automatizar esta tarea.
+  </p>
+  <br>
+  <p><b>Manejar errores de servidor</b></p>
+  <p> En algunas ocasiones, ocurrirá un error al momento de realizar una petición HTTP,
+    que se puede deber a diversos motivos, usualmente recibiendo un código de error 400 en caso
+    de que sea un error de parte del cliente, o un error 500 en caso de que sea un error de parte
+    del servidor. Es importante que tu aplicación pueda reaccionar ante estos problemas, y con ayuda
+    del interceptor, podrás hacerlo. Un ejemplo común, es la necesidad de de redirigir al usuario
+    al login cuando su sesión haya caducado.
+  </p>
+  <br>
+  <p><b>Mantener un registro</b></p>
+  <p> Relacionado con el punto anterior, es conveniente guardar un resgitro de los errores que se puedan
+    llegar a presentar en tu aplicación, para así poder estar al tanto de los errores que deben 
+    ser solucionados.
+  </p>
+</section>
+<br />
+<section id="implementación">
+  <!-- Implementación -->
+  <h2>Implementación</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    Para poner en marcha un interceptor, se requieren de dos pasos, crear la lógica del Interceptor
+    e incluír este en el arreglo de providers del módulo. A continuación se presentará un ejemplo 
+    para concatenar un token a cada petición HTTP.
+  </p>
+  <br />
+  <p>token.interceptor.ts</p>
+  <div class="code-screen">{{ interceptorCode }}</div>
+  <br>
+  <p>app.module.ts</p>
+  <div class="code-screen">{{ moduleCode }}</div>
+  <br>
+  <p> Nota como, en el arreglo de providers se declara el Interceptor, con 3 propiedades: 
+    <br> <br>
+    <b>Provide:</b> Hace referencia al tipo de provider que agregaremos. <br>
+    <b>useClass:</b> Aquí se incluye el archivo con el interceptor previamente creado. <br>
+    <b>multi:</b> En caso de ser verdadero, permite la implementacióne múltiples interceptors.
+  </p>
+</section>
+
+<!-- Navigation -->
+<div class="page-navigator">
+  <button
+    routerLink="/intermedio/event/emitter"
+    mat-raised-button
+    class="primary-button"
+  >
+    <mat-icon svgIcon="chevron-left"></mat-icon>
+    Anterior
+  </button>
+  <button
+    mat-raised-button
+    class="primary-button"
+    disabled="true"
+    style="margin-left: 20px"
+  >
+    Siguiente
+    <mat-icon svgIcon="chevron-right"></mat-icon>
+  </button>
+</div>

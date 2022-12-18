@@ -22,6 +22,8 @@ const routes: Routes = [
   // INTERMEDIO
   { path: 'intermedio/guards', loadChildren: () => import('./modules/intermediate/guards/guards.module').then(m => m.GuardsModule) },
   { path: 'intermedio/lazy/load', loadChildren: () => import('./modules/intermediate/lazy-load/lazy-load.module').then(m => m.LazyLoadModule) },
+  { path: 'intermedio/event/emitter', loadChildren: () => import('./modules/intermediate/event-emitter/event-emitter.module').then(m => m.EventEmitterModule) },
+  { path: 'intermedio/interceptor', loadChildren: () => import('./modules/intermediate/interceptor/interceptor.module').then(m => m.InterceptorModule) },
   // EXTRAS
   { path: "**", component: PageNotFoundComponent }
 ];

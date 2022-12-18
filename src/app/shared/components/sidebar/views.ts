@@ -114,7 +114,7 @@ export const VIEWS: ViewInterface[] = [
       {
         icon: 'exclamation-thick',
         name: 'Event Emitter',
-        href: 'intermedio/event-emitter',
+        href: 'intermedio/event/emitter',
       },
       {
         icon: 'shield-key-outline',

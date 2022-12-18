@@ -1,0 +1,87 @@
+<div class="main-title">
+  <h1>Event Emitter</h1>
+</div>
+<br />
+<p>
+  A continuación se presentará una introducción al Event Emitter en Angular.
+</p>
+<br />
+<section id="qué-es">
+  <!-- Qué es -->
+  <h2>¿Qué es Event Emitter?</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    Un problema con el que te toparás en un futuro al trabajar con Angular, es
+    encontrar la necesidad de compatir información entre distintos componentes,
+    de un componente padre a un componente hijo, y viceversa. Para este
+    problema, Event Emitter es una solución práctica, que simplifica el proceso
+    de comunicación etre componentes, clases o servicios.
+  </p>
+  <p>
+    En conceptos generales, Event Emitter consiste en un receptor y un emisor (o
+    varios), en el que el receptor se suscribe a un "EventEmitter", y espera a
+    que los emisores manden una señal.
+  </p>
+</section>
+<br />
+<section id="servicio">
+  <!-- Servicio -->
+  <h2>Servicio</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    Para crear un EventEmitter, se requiere de un servicio intermedio, que
+    relacionará los emisores y los receptores.
+  </p>
+  <br />
+  <p>emitter-service.ts</p>
+  <div class="code-screen">{{ serviceCode }}</div>
+</section>
+<br>
+<section id="receptor">
+  <!-- Receptor -->
+  <h2>Receptor</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    El receptor es quien recibe las señales, para posteriormente realizar una acción.
+  </p>
+  <br />
+  <p>receptor.component.ts</p>
+  <div class="code-screen">{{ receptorCode }}</div>
+</section>
+<br>
+<section id="emisor">
+  <!-- Emisor -->
+  <h2>Emisor</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    El emisor es quien emite las señales, para posteriormente ser interpretadas por el receptor.
+  </p>
+  <br />
+  <p>emisor.component.ts</p>
+  <div class="code-screen">{{ emisorCode }}</div>
+</section>
+
+<!-- Navigation -->
+<div class="page-navigator">
+  <button
+    routerLink="/intermedio/lazy/load"
+    mat-raised-button
+    class="primary-button"
+  >
+    <mat-icon svgIcon="chevron-left"></mat-icon>
+    Anterior
+  </button>
+  <button
+    mat-raised-button
+    class="primary-button"
+    routerLink="/intermedio/interceptor"
+    style="margin-left: 20px"
+  >
+    Siguiente
+    <mat-icon svgIcon="chevron-right"></mat-icon>
+  </button>
+</div>
