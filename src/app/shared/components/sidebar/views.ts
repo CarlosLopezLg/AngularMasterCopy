@@ -59,7 +59,7 @@ export const VIEWS: ViewInterface[] = [
         href: 'materials/spinners',
       },
       {
-        icon: 'checkbox-blank-outline',
+        icon: 'percent-outline',
         name: 'Progress Bar',
         href: 'materials/progress/bar',
       },
@@ -67,6 +67,16 @@ export const VIEWS: ViewInterface[] = [
         icon: 'checkbox-blank-outline',
         name: 'Slider',
         href: 'materials/slider',
+      },
+      {
+        icon: 'checkbox-blank-circle-outline',
+        name: 'Ripples',
+        href: 'materials/ripples',
+      },
+      {
+        icon: 'checkbox-outline',
+        name: 'Check box',
+        href: 'materials/checkbox',
       },
     ],
   },

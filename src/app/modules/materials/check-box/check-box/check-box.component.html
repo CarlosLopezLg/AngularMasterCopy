@@ -1,0 +1,157 @@
+<div class="main-title">
+  <h1>Checkbox</h1>
+</div>
+<br />
+<p>
+  A continuación se presentarán ejemplos del uso checkbox con Angular Materials.
+</p>
+<br />
+<!-- Implementación -->
+<section id="implementación">
+  <h2>Implementación</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <p>
+    Para el correcto funcionamiento de los check box, se requiere de importar el
+    siguiente módulo:
+  </p>
+  <br />
+  <div class="code-screen">{{ importString }}</div>
+</section>
+<br />
+<!--  Básico -->
+<section id="básico">
+  <h2>Checkbox</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+
+    <div class="playground demo-content centerSection">
+        <mat-checkbox>Seleccionar</mat-checkbox>
+      <br />
+    </div>
+    <p><b>Código:</b></p>
+    <div class="playground">
+      <app-example-code
+        [htmlContent]="basicHtml"
+      ></app-example-code>
+    </div>
+  </div>
+</section>
+<br />
+
+<!--  Opciones -->
+<section id="opciones">
+  <h2>Opciones</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+
+    <div class="playground demo-content centerSection" style="flex-direction: column;">
+        <mat-checkbox checked="true" color="warn" disableRipple="true">Seleccionar</mat-checkbox> <br>
+        <mat-checkbox indeterminate="true" color="primary" labelPosition="before">Seleccionar</mat-checkbox> <br>
+      <br />
+    </div>
+    <p><b>Código:</b></p>
+    <div class="playground">
+      <app-example-code [htmlContent]="optionsHtml"></app-example-code>
+    </div>
+  </div>
+</section>
+
+<!--  Formularios -->
+<section id="formularios">
+    <h2>Formularios</h2>
+    <mat-divider></mat-divider>
+    <br />
+    <div class="demostration-container">
+      <p><b>Ejemplo:</b></p>
+      <div class="playground demo-content centerSection" style="flex-direction: column;">
+        <form [formGroup]="myform">
+            <p><mat-checkbox formControlName="one" color="warn">Opcion 1 (Valor predeterminado)</mat-checkbox></p>
+            <p><mat-checkbox formControlName="two" color="warn" required="true">Opcion 2 (Requerido)</mat-checkbox></p>
+            <p><mat-checkbox formControlName="three" color="warn">Opcion 3 (Opcional)</mat-checkbox></p>
+            <br>
+            <button mat-raised-button color="primary" [disabled]="myform.invalid"> Enviar </button>
+            <br> <br>
+            <p> Valor del formulario: {{myform.value | json}}</p>
+        </form>
+      </div>
+      <p><b>Código:</b></p>
+      <div class="playground">
+        <app-example-code [htmlContent]="formsHtml" [tsContent]="formsTs"></app-example-code>
+      </div>
+    </div>
+  </section>
+<br />
+
+<!--  Eventos -->
+<section id="Eventos">
+  <h2>Eventos</h2>
+  <mat-divider></mat-divider>
+  <br />
+  <div class="demostration-container">
+    <p><b>Ejemplo:</b></p>
+    <div class="playground demo-content centerSection" style="flex-direction: column;">
+      <mat-checkbox color="warn" (change)="valueChanged($event.checked)">Se ejecutará cada vez que se seleccione</mat-checkbox> <br>
+      <mat-checkbox indeterminate="true" color="warn" (indeterminateChange)="valueChanged(true)">Se ejecutará sólo la primera vez</mat-checkbox>
+    </div>
+    <p><b>Código:</b></p>
+    <div class="playground">
+      <app-example-code [htmlContent]="eventsHtml"></app-example-code>
+    </div>
+  </div>
+</section>
+<br />
+
+<!-- Parámetros -->
+<section id="parámetros">
+  <h2>Parámetros</h2>
+  <mat-divider></mat-divider>
+  <br />
+
+  <table mat-table [dataSource]="dataSource" style="width: 100%">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Tipo de dato</th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="desc">
+      <th mat-header-cell *matHeaderCellDef>Descripción</th>
+      <td mat-cell *matCellDef="let element">{{ element.desc }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</section>
+<br />
+
+
+<!-- Navigation -->
+<div class="page-navigator">
+  <button
+    routerLink="/materials/slider"
+    mat-raised-button
+    class="primary-button"
+  >
+    <mat-icon svgIcon="chevron-left"></mat-icon>
+    Anterior
+  </button>
+  <button
+    mat-raised-button
+    class="primary-button"
+    disabled="true"
+    style="margin-left: 20px"
+  >
+    Siguiente
+    <mat-icon svgIcon="chevron-right"></mat-icon>
+  </button>
+</div>

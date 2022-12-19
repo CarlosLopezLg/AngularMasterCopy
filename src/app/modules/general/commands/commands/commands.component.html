@@ -165,6 +165,16 @@
       <div class="x-limit">
         <app-shell-layout> {{ generatedCommand }}</app-shell-layout>
       </div>
+      <br>
+      <div class="center-content">
+        <button 
+        mat-raised-button 
+        color="accent" 
+        [cdkCopyToClipboard]="generatedCommand"
+        (click)="confirmCopy()"
+        > Copiar comando 
+      </button>
+      </div>
     </div>
     <br />
   </div>

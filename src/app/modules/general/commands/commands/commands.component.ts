@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-commands',
@@ -59,7 +60,7 @@ export class CommandsComponent implements OnInit {
   moduleOptions = [1,2,4,8];
   routingOptions = [2];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.generatorForm = this.fb.group({
@@ -87,6 +88,10 @@ export class CommandsComponent implements OnInit {
     if (checkRouting && this.routingOptions.includes(option.value))
       this.generatedCommand = this.generatedCommand + ' --routing';
     this.isGenerated = true;
+  }
+
+  confirmCopy() {
+    this._snackBar.open('¡Texto copiado!', '', {duration: 500});
   }
 
 }
