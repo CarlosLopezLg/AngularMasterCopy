@@ -42,7 +42,7 @@ mat-slider {
   }
   
   .example-header-image {
-    background-image: url('./../../../../../assets/images/materials/rabbit-profile.jpg');
+    background-image: url('/angular/assets/images/materials/rabbit-profile.jpg');
     background-size: cover;
   }
 
