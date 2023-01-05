@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { EmitterService } from 'src/app/shared/services/emitter-service.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-materials-install',
@@ -273,10 +274,18 @@ export class MaterialsInstallComponent implements OnInit {
   filteredOptions!: Observable<string[]>;
   //Calendar
   selected!: Date | null;
-  constructor(
-	private emitterService: EmitterService,
-	private _snackBar: MatSnackBar
-	) { }
+	
+	constructor(
+		private meta: Meta, 
+		private title: Title, 
+		private emitterService: EmitterService,
+		private _snackBar: MatSnackBar
+		) { 
+		this.title.setTitle('Introducción a Angular Materials');
+		this.meta.updateTag({ name: 'title', content: 'Introducción a Angular Materials' });
+		this.meta.updateTag({ name: 'description', content: 'Qué es Angular Materials, las herramientas de componentes responsivas que nos ofrece Angular.' });
+		this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, conceptos, generales, angular materials, materials, intermedio, introducción, materials, botones, buttons, spinners, progressbar, slider, ripples, barra, checkbox, radio, toggle, switch, icon, badge, card, autocomplete, tootltip, datepicker, divider, toolbar, sidenav, form, field, snackbar, css, bootstrap' });
+	  }
 
   ngOnInit(): void {
     this.filteredOptions = this.myControl.valueChanges.pipe(

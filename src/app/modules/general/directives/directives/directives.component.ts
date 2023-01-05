@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-directives',
@@ -104,7 +105,12 @@ export class DirectivesComponent implements OnInit {
   }
   `
 
-  constructor() { }
+  constructor(private meta: Meta, private title: Title) { 
+    this.title.setTitle('Directivas principales de Angular');
+    this.meta.updateTag({ name: 'title', content: 'Directivas principales de Angular' });
+    this.meta.updateTag({ name: 'description', content: 'Descubre las Directivas principales de Angular como NgFor, NgIf y NgModel.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, conceptos, generales, angular materials, materials, intermedio, introducción, ngfor, ngif, ngshow, hidden, ngmodel, ngclick, bind, properties, class, css' });
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-guards',
@@ -92,7 +93,12 @@ export class GuardsComponent implements OnInit {
   }
   `
 
-  constructor() { }
+  constructor(private meta: Meta, private title: Title) { 
+    this.title.setTitle('Implementación de Guards en Angular');
+    this.meta.updateTag({ name: 'title', content: 'Implementación de Guards en Angular' });
+    this.meta.updateTag({ name: 'description', content: 'Conoce cómo implementar los Guards en Angular para aumentar la seguridad de tu página web y denegar permisos de acceso.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, guards, security, CanActivate, CanActivateChild, CanLoad, CanDeactivate' });
+  }
 
   ngOnInit(): void {
   }

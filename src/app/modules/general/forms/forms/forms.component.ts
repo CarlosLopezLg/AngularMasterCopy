@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-forms',
@@ -75,7 +76,12 @@ export class FormsComponent implements OnInit {
   }
   `
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private meta: Meta, private title: Title, private fb: FormBuilder) { 
+    this.title.setTitle('Formularios en Angular Angular');
+    this.meta.updateTag({ name: 'title', content: 'Formularios en Angular Angular' });
+    this.meta.updateTag({ name: 'description', content: 'Conoce los Formularios en Angular Angular.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, forms, formularios, validators, validation' });
+  }
 
   ngOnInit(): void {
     this.buildFormOne()

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-lazy-load',
@@ -40,7 +41,12 @@ export class LazyLoadComponent implements OnInit {
   export class AppRoutingModule { }
   `
 
-  constructor() { }
+  constructor(private meta: Meta, private title: Title) { 
+    this.title.setTitle('Implementación de Lazy Load (Carga Perezosa) en Angular');
+    this.meta.updateTag({ name: 'title', content: 'Implementación de Lazy Load (Carga Perezosa) en Angular' });
+    this.meta.updateTag({ name: 'description', content: 'Conoce cómo implementar los Lazy Load (Carga Perezosa) en Angular para aumentar la seguridad de tu página web y denegar permisos de acceso.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, intermedio, lazy load, carga, perezosa, recursos, rendimiento' });
+  }
 
   ngOnInit(): void {
   }

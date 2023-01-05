@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .left-column {
+    width: 100%;
+    background-color: #f1f1f1; /* Color de fondo de la columna de la izquierda */
+  }
+  
+  .right-column {
+    background-color: #bfff00; /* Color de fondo de la columna de la derecha */
+    width: 250px;
+  }

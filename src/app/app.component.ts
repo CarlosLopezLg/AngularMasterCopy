@@ -4,6 +4,9 @@ import { EmitterService } from './shared/services/emitter-service.service';
 import { IconService } from './shared/services/icon.service';
 import { LocalStorageService } from './shared/services/local-storage.service';
 
+// ng build --configuration production --base-href /angular/
+// declare var googletag: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +29,9 @@ export class AppComponent {
     this.emitterService.toggleSidebar.subscribe(() => {
       this.sidebar.toggle();
     });
+    this.emitterService.closeSidebar.subscribe(() => {
+      this.sidebar.close();
+    });
 
     this.cookiesAccepted = !!this.lStorage.getItem('cookiesAccepted');
     if (!this.cookiesAccepted) {
@@ -38,6 +44,8 @@ export class AppComponent {
 
   onActivate():void {
     document.body.scrollTop = 0;
+    //Adsense
+    //googletag.pubads().refresh();
     // Navegar a sección específica de html
     this.route.fragment.subscribe(f => {
       const element = document.querySelector("#" + f)

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmitterService } from '../../services/emitter-service.service';
 import { ViewInterface } from './IView';
 import { VIEWS } from './views'
 
@@ -12,6 +13,7 @@ export class SidebarComponent implements OnInit {
   menuItems: ViewInterface[] = VIEWS
 
   constructor(
+    private emitterService: EmitterService
   ) { }
 
   ngOnInit(): void {
@@ -19,6 +21,10 @@ export class SidebarComponent implements OnInit {
 
   goToLink(url: string){
     window.open(url, "_blank");
+  }
+
+  CloseSidebar(): void {
+    this.emitterService.closeSidebar.emit();
   }
   
 }

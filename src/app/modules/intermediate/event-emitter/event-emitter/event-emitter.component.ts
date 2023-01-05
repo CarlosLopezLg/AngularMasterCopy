@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-event-emitter',
@@ -65,7 +66,12 @@ export class EventEmitterComponent implements OnInit {
 
   `
 
-  constructor() { }
+  constructor(private meta: Meta, private title: Title) { 
+    this.title.setTitle('Implementación de Event Emitter en Angular');
+    this.meta.updateTag({ name: 'title', content: 'Implementación de Event Emitter en Angular' });
+    this.meta.updateTag({ name: 'description', content: 'Conoce cómo implementar los Event Emitter en Angular para aumentar la seguridad de tu página web y denegar permisos de acceso.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, intermedio, event, emittter, emitir, evento, comunicar, padre, hijo, componente' });
+  }
 
   ngOnInit(): void {
   }

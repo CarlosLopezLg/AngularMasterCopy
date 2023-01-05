@@ -9,6 +9,7 @@ import { MaterialsModule } from './shared/modules/materials/materials.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     HttpClientModule,
     SharedModule,
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [Meta, Title, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

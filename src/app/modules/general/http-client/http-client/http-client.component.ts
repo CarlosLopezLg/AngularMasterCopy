@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpDemoService } from '../http-demo.service';
 import { UserInterface } from '../IUser';
-
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-http-client',
@@ -67,7 +67,12 @@ export class HttpClientComponent implements OnInit {
   posts:Array<UserInterface> = [];
   postsLoaded:boolean = false;
 
-  constructor(private demoService: HttpDemoService) { }
+  constructor(private meta: Meta, private title: Title, private demoService: HttpDemoService) { 
+    this.title.setTitle('Cliente HTTP en Angular');
+    this.meta.updateTag({ name: 'title', content: 'Cliente HTTP en Angular' });
+    this.meta.updateTag({ name: 'description', content: 'Aprende a mandar peticiones http desde Angular a un servidor' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, cliente, http, servidor, api, frontend, backend, json, service' });
+  }
 
   ngOnInit(): void {
   }

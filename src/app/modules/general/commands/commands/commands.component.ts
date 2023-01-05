@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-commands',
@@ -60,7 +61,13 @@ export class CommandsComponent implements OnInit {
   moduleOptions = [1,2,4,8];
   routingOptions = [2];
 
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar) { }
+
+  constructor(private meta: Meta, private title: Title, private fb: FormBuilder, private _snackBar: MatSnackBar) { 
+    this.title.setTitle('Comandos principales de Angular');
+    this.meta.updateTag({ name: 'title', content: 'Comandos principales de Angular' });
+    this.meta.updateTag({ name: 'description', content: 'Conoce los Comandos principales de Angular, su sintáxis y el generador de comandos implementado.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, conceptos, generales, angular materials, materials, intermedio, comandos, npm, node, ng, new, serve, generate, guard, component, pipe, module, módulo, componente, clase, class, interface, interfaz, interceptor' });
+  }
 
   ngOnInit(): void {
     this.generatorForm = this.fb.group({

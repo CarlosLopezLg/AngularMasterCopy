@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-ripples',
@@ -40,7 +41,12 @@ export class RipplesComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'type', 'desc'];
 
-  constructor() { }
+  constructor(private meta: Meta, private title: Title) { 
+    this.title.setTitle('Ripple de Angular Materials');
+    this.meta.updateTag({ name: 'title', content: 'Ripple de Angular Materials' });
+    this.meta.updateTag({ name: 'description', content: 'Conoce cómo implementar los Ripple en Angular Materials.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, angular materials, materials, Ripple, Ripples,buttons, api, parameters, parámetros, colores, forms, color, disabled, disableRipple' });
+  }
 
   ngOnInit(): void {
   }

@@ -4,8 +4,9 @@ export interface ViewInterface {
     views: Array<viewChild>;
 }
 
-interface viewChild {
+export interface viewChild {
     icon: string;
     name: string;
     href: string;
+    keywords: Array<string>;
 }

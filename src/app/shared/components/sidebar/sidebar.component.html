@@ -19,6 +19,7 @@
           class="item-sidenav"
           mat-button
           [routerLink]="view.href"
+          (click)="CloseSidebar()"
           *ngFor="let view of category.views"
         >
           <mat-icon [svgIcon]="view.icon"></mat-icon>

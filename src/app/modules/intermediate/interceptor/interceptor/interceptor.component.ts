@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-interceptor',
@@ -67,7 +68,12 @@ export class InterceptorComponent implements OnInit {
   export class AppModule { }
   `
 
-  constructor() { }
+  constructor(private meta: Meta, private title: Title) { 
+    this.title.setTitle('Implementación de Interceptor en Angular');
+    this.meta.updateTag({ name: 'title', content: 'Implementación de Interceptor en Angular' });
+    this.meta.updateTag({ name: 'description', content: 'Conoce cómo implementar los Interceptor en Angular para aumentar la seguridad de tu página web y denegar permisos de acceso.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, intermedio, interceptor, http, peticiones, token, servidor, Provide, multi, useClass' });
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-spinners',
@@ -23,7 +24,12 @@ export class SpinnersComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'type', 'desc'];
 
-  constructor() { }
+  constructor(private meta: Meta, private title: Title) { 
+    this.title.setTitle('Spinner de Angular Materials');
+    this.meta.updateTag({ name: 'title', content: 'Spinner de Angular Materials' });
+    this.meta.updateTag({ name: 'description', content: 'Conoce cómo implementar los Spinner en Angular Materials.' });
+    this.meta.updateTag({ name: 'keywords', content: 'angular, node, javascript, typescript, conejos, programadores, tutorial, guia, pasos, introducción, angular materials, materials, Spinner, buttons, api, parameters, parámetros, colores, forms, color, disabled, disableRipple' });
+  }
 
   ngOnInit(): void {
   }
